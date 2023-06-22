@@ -137,3 +137,38 @@ nothing to commit, working tree clean
 PS C:\Users\hp\Desktop\namaste-react> git checkout master
 Switched to branch 'master'
 Your branch is up to date with 'namaste-react/master'.
+
+MAIN BROOOOOOO
+
+PS C:\Users\hp\Desktop\namaste-react> echo > terminal.txt
+
+cmdlet Write-Output at command pipeline position 1
+Supply values for the following parameters:
+PS C:\Users\hp\Desktop\namaste-react> git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'namaste-react/main'.
+Already up to date.
+PS C:\Users\hp\Desktop\namaste-react> git add terminal.txt
+PS C:\Users\hp\Desktop\namaste-react> git status
+On branch main
+Your branch is up to date with 'namaste-react/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   terminal.txt
+
+PS C:\Users\hp\Desktop\namaste-react> git commit -m "tried to add files please do echo > filename omg"
+[main 56d84e0] tried to add files please do echo > filename omg
+ 1 file changed, 139 insertions(+)
+ create mode 100644 terminal.txt
+PS C:\Users\hp\Desktop\namaste-react> git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 1.60 KiB | 820.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Adijainy/namaste-react
+   c15e42c..56d84e0  main -> main
+PS C:\Users\hp\Desktop\namaste-react>

@@ -1,0 +1,139 @@
+PS C:\Users\hp\Desktop\namaste-react> git pull origin main
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+PS C:\Users\hp\Desktop\namaste-react> git add -a
+error: unknown switch `a'
+
+PS C:\Users\hp\Desktop\namaste-react> git add .
+PS C:\Users\hp\Desktop\namaste-react> git status
+On branch master
+
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   app.js
+        new file:   index.html
+ 2 files changed, 25 insertions(+)
+ create mode 100644 app.js
+ create mode 100644 index.html
+PS C:\Users\hp\Desktop\namaste-react> git pull origin main --allow-unrelated-histories      
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+PS C:\Users\hp\Desktop\namaste-react> git pull origin main
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+PS C:\Users\hp\Desktop\namaste-react> git config --global user.email "adij1222@gmail.com"
+PS C:\Users\hp\Desktop\namaste-react> git pull origin main --allow-unrelated-histories   
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+Please make sure you have the correct access rights
+and the repository exists.
+error: No such remote: 'origin'
+PS C:\Users\hp\Desktop\namaste-react> git remote add origin https://github.com/Adijainy/namaste-react
+ * branch            main       -> FETCH_HEAD
+ * [new branch]      main       -> origin/main
+ README.md | 2 ++
+ 1 file changed, 2 insertions(+)
+ create mode 100644 README.md
+From https://github.com/Adijainy/namaste-react
+ * branch            main       -> FETCH_HEAD
+PS C:\Users\hp\Desktop\namaste-react> git push origin main
+error: src refspec main does not match any
+PS C:\Users\hp\Desktop\namaste-react> git status
+On branch master
+nothing to commit, working tree clean
+PS C:\Users\hp\Desktop\namaste-react> git add .
+On branch master
+nothing to commit, working tree clean
+PS C:\Users\hp\Desktop\namaste-react> git pull origin main --allow-unrelated-histories
+From https://github.com/Adijainy/namaste-react
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+PS C:\Users\hp\Desktop\namaste-react> git push origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/Adijainy/namaste-react'
+nothing to commit, working tree clean
+PS C:\Users\hp\Desktop\namaste-react> git status
+On branch master
+Your branch is up to date with 'namaste-react/master'.
+
+nothing to commit, working tree clean
+PS C:\Users\hp\Desktop\namaste-react> git status
+Your branch is up to date with 'namaste-react/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+
+PS C:\Users\hp\Desktop\namaste-react> git add .
+PS C:\Users\hp\Desktop\namaste-react> git status
+Your branch is up to date with 'namaste-react/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+PS C:\Users\hp\Desktop\namaste-react> git pull origin master
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+Please make sure you have the correct access rights
+and the repository exists.
+Already up to date.
+PS C:\Users\hp\Desktop\namaste-react> git commit -m "see any changes"
+[master 75bec6e] see any changes
+ 1 file changed, 1 insertion(+)
+PS C:\Users\hp\Desktop\namaste-react> git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Writing objects: 100% (3/3), 307 bytes | 307.00 KiB/s, done.
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/Adijainy/namaste-react
+   c8bcc3d..75bec6e  master -> master
+PS C:\Users\hp\Desktop\namaste-react> git checkout main
+Switched to a new branch 'main'
+branch 'main' set up to track 'namaste-react/main'.
+PS C:\Users\hp\Desktop\namaste-react> touch test.txt
+touch : The term 'touch' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the     
+name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ~~~~~
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+PS C:\Users\hp\Desktop\namaste-react> echo test.txt
+test.txt
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (1/1), 627 bytes | 104.00 KiB/s, done.
+From https://github.com/Adijainy/namaste-react
+Updating 8ceb0b9..c15e42c
+Fast-forward
+ index.html | 1 +
+ 1 file changed, 1 insertion(+)
+fatal: pathspec 'test.txt' did not match any files
+PS C:\Users\hp\Desktop\namaste-react> git status
+On branch main
+Your branch is up to date with 'namaste-react/main'.
+
+nothing to commit, working tree clean
+PS C:\Users\hp\Desktop\namaste-react> git add .
+PS C:\Users\hp\Desktop\namaste-react> git status
+On branch main
+Your branch is up to date with 'namaste-react/main'.
+
+nothing to commit, working tree clean
+PS C:\Users\hp\Desktop\namaste-react> git commit -m "why"
+On branch main
+Your branch is up to date with 'namaste-react/main'.
+
+nothing to commit, working tree clean
+PS C:\Users\hp\Desktop\namaste-react> git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'namaste-react/master'.

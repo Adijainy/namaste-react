@@ -1,0 +1,42 @@
+1. What is Emmet?
+A- Emmet is a free add-on for your text editor. It allows you to type shortcuts that are then expanded into full pieces of code. By using Emmet, developers type less, they save both on keystrokes and time. Also relying on Emmet's auto completion means fewer typos and missing tags, leading to more robust and valid files.
+
+2. Difference between a Library and Framework?
+A-  ->Libraries provide developers with predefined functions and classes to make their work easier and boost the development process. JQuery, React JS, etc.
+    ->Framework, on the other hand, is like the foundation upon which developers build applications for specific platforms. Spring, NodeJS, AngularJS, Vue JS, etc.
+    ->The purpose of libraries is to perform a defined and specific task. Eg: Image manipulation, network protocols, math operations, etc.
+    ->Frameworks can be used for performing a wide range of tasks. Among these are Web application systems, plug-in managers, GUI systems, and so on.
+    ->Benefits of library- Good code quality, reusability, and control, enhanced speed and performance of the program, etc.
+    ->Benefits of framework- Faster programming, support from the community, great support for MVC (Model View Controller) pattern, etc.
+
+3. What is CDN? Why do we use it?
+A- A content delivery network (CDN) is a group of geographically distributed servers that speed up the delivery of web content by bringing it closer to where users are.
+    Uses- Speed – A CDN helps improve the page load time of your site and make it faster.
+        Crash Resistance – Using a CDN allows you to distribute the load to multiple servers instead of having 100% traffic to our main server, making it less likely to crash.
+        Improved User Experience – With a CDN making your website faster, you will notice a decline in bounce rate on your site. It also increases the number of pages viewed by each user. Clearly, a fast site means improved user experience.
+
+4. Why is React known as React?
+A- React is called "React" because of its core feature, which is its ability to "react" or respond dynamically to changes in data. React was originally created by Facebook in 2011 for use in their own web applications, and it was released as an open-source project in 2013.
+
+React's primary goal is to simplify the creation of complex, interactive user interfaces by breaking them down into smaller, reusable components.
+It was developed by Facebook (a site that CONSTANTLY updates their data) to improve the user interface development and more effectively change (REACT to) what the user sees when they're doing things like mouse clicking, submitting and typing.
+
+5. What is crossorigin in script tag?
+A-  The crossorigin attribute sets the mode of the request to an HTTP CORS Request.
+Web pages often make requests to load resources on other servers. Here is where CORS comes in.
+A cross-origin request is a request for a resource (e.g. style sheets, iframes, images, fonts, or scripts) from another domain.
+CORS is used to manage cross-origin requests.
+CORS stands for Cross-Origin Resource Sharing, and is a mechanism that allows resources on a web page to be requested from another domain outside their own domain. It defines a way of how a browser and server can interact to determine whether it is safe to allow the cross-origin request. CORS allows servers to specify who can access the assets on the server, among many other things.
+
+6. What is diference between React and ReactDOM
+A- React is the entry point to the React library. If you load React from a <script> tag, these top-level APIs are available on the React global.
+Indeed it exposes most of the common React features to create and use components.
+
+The react-dom package provides DOM-specific methods that can be used at the top level of your app and as an escape hatch to get outside the React model if you need to.
+This package is essentially a container used to expose both the client and server sub-packages from a single one. 
+
+7. What is difference between react.development.js and react.production.js files via CDN?
+A- The development build is used - as the name suggests - for development reasons. You have Source Maps, debugging and often times hot reloading ability in those builds. The production build, on the other hand, runs in production mode which means this is the code running on your client's machine.
+
+8. What is async and defer?
+A- 

@@ -1,0 +1,61 @@
+● - What is `NPM`?
+-npm is the world's largest Software Library (Registry)
+-npm is also a software Package Manager and Installer
+-npm also has command-line tools to help you install the different packages and manage their dependencies.
+
+● - What is `Parcel/Webpack`? Why do we need it?
+-Parcel and webpack are the bundlers used mostly for JavaScript or Typescript code that helps you to minify, clean, and make your code compact so that it becomes easier to send a request or receive the response from the server. 
+-Bundlers are used to reduce the size of the code and improve the performance of the application.
+-A bundler in React is a tool that allows developers to package their code into a single file or bundle. This bundle can then be used to run the application in the browser. 
+
+● - What is `.parcel-cache`
+-cache folder stores information about your project when parcel builds it, so that when it rebuilds, it doesn't have to re-parse and re-analyze everything from scratch. It's a key reason why parcel can be so fast in development mode.
+-it caches things so that the time for building is drastically reduced and this cache is stored in .parcel-cache folder.
+-It stores some files that parcel uses in order to perform some functions.
+
+● - What is `npx` ?
+-npx executes javascript package using npm.
+-It is simply an NPM package runner.
+
+● - What is difference between `dependencies` vs `devDependencies`
+-"dependencies" : Packages required by your application in production. 
+-"devDependencies" : Packages that are only needed for local development and testing.
+
+● - What is Tree Shaking?
+-When we import and export modules in JavaScript, most of the time there is unused code floating around. 
+-Tree shaking or dead code elimination means that unused modules will not be included in the bundle during the build process.
+
+● - What is Hot Module Replacement?
+-It allows web componenets to be updated as we develop, without needing a full refresh of the browser.
+-Hot Module Replacement (HMR) exchanges, adds, or removes modules while an application is running, without a full reload.
+
+● - List down your favourite 5 superpowers of Parcel and describe any 3 of them in your own words.
+-bundling -minification -super fast build algo -file watcher algo -hmr -image optimization -caching while development -compatible with older versions of browser -https in development -consistent hashing algo -zero config -cleaning code -port number
+
+● - What is `.gitignore`? What should we add and not add into it?
+-A gitignore file specifies intentionally untracked files that Git should ignore.
+-everything that you can regenerate, put it in gitignore. eg: node-modules, parcel-cache
+-everything that has information to regenerateeverything else, do no put. eg: package-lock.json
+
+● - What is the difference between `package.json` and `package-lock.json`
+-package.json records important metadata about the project. It contains basic information about the project.
+-package-lock.json tells us the exact version of Librarywe are using to avoid uncertainities during production.
+
+● - Why should I not modify `package-lock.json`?
+-It is a generated file and is not designed to be manually edited. Its purpose is to track the entire tree of dependencies (including dependencies of dependencies) and the exact version of each dependency.
+
+● - What is `node_modules` ? Is it a good idea to push that on git?
+-Node modules provide a way to re-use code in your Node application. In some ways, they're similar to a class in other languages
+-it is just a directory created by npm and a way of tracking each packages you install locally via package.json
+-as the node_modules are very heavy, no need to push it to git
+-and as our `package.json` and `package-lock.json` has enough information to recreate/generate the node_modules directly on our server
+
+● - What is the `dist` folder?
+When we build a production build, parcel bundles all the files into 3 files(html, css, js) and pushs this into the dist folder
+
+● - What is `browserlists`       
+-Browserslist is a tool that allows specifying which browsers should be supported in your frontend app by specifying "queries" in a config file.
+
+● Read about: ^ - caret and ~ - tilda
+● Read about Script types in html (MDN Docs)
+● (Read about dif bundlers: vite, webpack, parcel)

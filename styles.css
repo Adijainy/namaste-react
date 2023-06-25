@@ -1,0 +1,49 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.bar{
+    background-color: rgb(141, 177, 193);
+    padding: 0.1rem 0;
+}
+a{
+    text-decoration: none;
+    color: black;
+    font-family: 'Ultra', serif;
+    font-size: 1.5rem;
+}
+img{
+    width: 1.7rem;
+}
+input[type=text] {
+    border: 1px solid #ccc;  
+    padding: 0.5rem;
+}
+.btn{
+    border-top-right-radius: 0.2rem;
+    border-bottom-right-radius: 0.2rem;
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+}
+.btn:hover{
+    background-color:#ccc;;
+}
+i{
+    font-size: 1.4rem;
+}
+
+li{
+    list-style: none;
+    display: inline;
+}
+.search{
+    margin: 0 40rem 0 28rem;
+}
+.search i{
+    font-size: 0.9rem;
+}
+
+
+
+
+

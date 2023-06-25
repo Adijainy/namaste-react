@@ -26,5 +26,48 @@ const Header = ()=> (
     </div>  
 );
 
+const Logo = ()=>{
+    return (
+        <a href="#">React</a>
+    );
+};
+
+const SearchBar = ()=>{
+    return(
+        <>
+            <input key="2.1" type="text" placeholder="Search.."></input>
+            <button key="2.btn" className="btn" type="submit"><i className="fa fa-search"></i></button>
+        </>
+    );
+};
+
+const UserIcon =()=>{
+    return(
+        // <div>
+            <i className="fa-solid fa-user"></i>
+        // {/* </div> */}
+            
+    );
+};
+
+//navbar component
+const Navbar = ()=>{
+    return (
+        <div id="last" class="bar">
+            <ul id="nav-items">
+                <li key="logo" className="logo">
+                    <Logo />
+                </li>
+                <li key = "search" className="search">
+                    <SearchBar/>
+                </li>
+                <li key="user">
+                    <UserIcon/>
+                </li>
+            </ul> 
+        </div>
+    );
+};
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<Header/>);
+root.render(<Navbar/>);

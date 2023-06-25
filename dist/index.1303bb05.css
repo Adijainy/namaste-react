@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.bar {
+  background-color: #8db1c1;
+  padding: .1rem 0;
+}
+
+a {
+  color: #000;
+  font-family: Ultra, serif;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+img {
+  width: 1.7rem;
+}
+
+input[type="text"] {
+  border: 1px solid #ccc;
+  padding: .5rem;
+}
+
+.btn {
+  border: 1px solid #ccc;
+  border-top-right-radius: .2rem;
+  border-bottom-right-radius: .2rem;
+  padding: .5rem;
+}
+
+.btn:hover {
+  background-color: #ccc;
+}
+
+i {
+  font-size: 1.4rem;
+}
+
+li {
+  list-style: none;
+  display: inline;
+}
+
+.search {
+  margin: 0 40rem 0 28rem;
+}
+
+.search i {
+  font-size: .9rem;
+}
+
+/*# sourceMappingURL=index.1303bb05.css.map */

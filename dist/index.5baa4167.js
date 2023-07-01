@@ -2947,182 +2947,963 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _client = require("react-dom/client");
 var _clientDefault = parcelHelpers.interopDefault(_client);
-const title1 = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-    children: "react element inside function"
-}, void 0, false, {
-    fileName: "app.js",
-    lineNumber: 3,
-    columnNumber: 16
-}, undefined);
-const Title2 = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-        children: "function inside function with tag"
-    }, void 0, false, {
-        fileName: "app.js",
-        lineNumber: 6,
-        columnNumber: 22
-    }, undefined);
-_c = Title2;
-const Title3 = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-        children: "function inside function, call the function"
-    }, void 0, false, {
-        fileName: "app.js",
-        lineNumber: 9,
-        columnNumber: 22
-    }, undefined);
-_c1 = Title3;
-//react functional componenet
-const Header = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: " React functional  "
-            }, void 0, false, {
-                fileName: "app.js",
-                lineNumber: 14,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                children: "component "
-            }, void 0, false, {
-                fileName: "app.js",
-                lineNumber: 15,
-                columnNumber: 9
-            }, undefined),
-            title1,
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Title2, {}, void 0, false, {
-                fileName: "app.js",
-                lineNumber: 17,
-                columnNumber: 9
-            }, undefined),
-            Title3()
-        ]
-    }, void 0, true, {
-        fileName: "app.js",
-        lineNumber: 13,
-        columnNumber: 22
-    }, undefined);
-_c2 = Header;
-const Logo = ()=>{
+/*
+-Header
+    -Logo
+    -Nav items(rhs)
+    -Cart
+-Body
+    -Search bar
+    -RestrauntList
+        -RestrauntCard
+            -Image
+            -Name
+            -Rating
+            -Cusines
+-Footer
+    -Links
+    -Copyright
+*/ const restrauntList = [
+    {
+        "type": "restaurant",
+        "data": {
+            "type": "F",
+            "id": "576559",
+            "name": "Third Wave Coffee",
+            "uuid": "bba7640f-6b0c-493b-a260-3a05986a07ee",
+            "city": "6",
+            "area": "Karve Nagar",
+            "totalRatingsString": "100+ ratings",
+            "cloudinaryImageId": "0dca660dbdf2e04f9b861c4426ffd41e",
+            "cuisines": [
+                "Beverages",
+                "Fast Food",
+                "Snacks"
+            ],
+            "tags": [],
+            "costForTwo": 40000,
+            "costForTwoString": "₹400 FOR TWO",
+            "deliveryTime": 37,
+            "minDeliveryTime": 37,
+            "maxDeliveryTime": 37,
+            "slaString": "37 MINS",
+            "lastMileTravel": 4.800000190734863,
+            "slugs": {
+                "restaurant": "third-wave-coffee-kothrud-kothrud",
+                "city": "pune"
+            },
+            "cityState": "6",
+            "address": "SHOWROOM NO 1, GR FLOOR (MEZZANINE + BASEMENT) ,CASABLANCA APARTMENTS CONDOMINIUM, SY NO 16, NEAR KARISHMA COMPLEX ROAD, KOTHRUD, PUNE, Pune, Maharashtra-411029",
+            "locality": "Late GA Kulkarni Path",
+            "parentId": 274773,
+            "unserviceable": false,
+            "veg": false,
+            "select": false,
+            "favorite": false,
+            "tradeCampaignHeaders": [],
+            "ribbon": [
+                {
+                    "type": "PROMOTED"
+                }
+            ],
+            "chain": [],
+            "feeDetails": {
+                "fees": [
+                    {
+                        "name": "distance",
+                        "fee": 4200,
+                        "message": ""
+                    },
+                    {
+                        "name": "time",
+                        "fee": 0,
+                        "message": ""
+                    },
+                    {
+                        "name": "special",
+                        "fee": 0,
+                        "message": ""
+                    }
+                ],
+                "totalFees": 4200,
+                "message": "",
+                "title": "Delivery Charge",
+                "amount": "4200",
+                "icon": ""
+            },
+            "availability": {
+                "opened": true,
+                "nextOpenMessage": "",
+                "nextCloseMessage": ""
+            },
+            "longDistanceEnabled": 0,
+            "rainMode": "NONE",
+            "thirdPartyAddress": false,
+            "thirdPartyVendor": "",
+            "adTrackingID": "cid=7304645~p=1~eid=00000189-11a1-5cdf-2515-df3d00c8017f~srvts=1688217935071",
+            "badges": {
+                "imageBased": [],
+                "textBased": [],
+                "textExtendedBadges": []
+            },
+            "lastMileTravelString": "4.8 kms",
+            "hasSurge": false,
+            "aggregatedDiscountInfoV3": {
+                "header": "30% OFF",
+                "subHeader": "UPTO ₹75",
+                "discountTag": "",
+                "headerTypeV2": 0
+            },
+            "sla": {
+                "restaurantId": "576559",
+                "deliveryTime": 37,
+                "minDeliveryTime": 37,
+                "maxDeliveryTime": 37,
+                "lastMileTravel": 4.800000190734863,
+                "lastMileDistance": 0,
+                "serviceability": "SERVICEABLE",
+                "rainMode": "NONE",
+                "longDistance": "NOT_LONG_DISTANCE",
+                "preferentialService": false,
+                "iconType": "EMPTY"
+            },
+            "promoted": true,
+            "avgRating": "4.4",
+            "totalRatings": 100,
+            "new": false
+        },
+        "subtype": "basic"
+    },
+    {
+        "type": "restaurant",
+        "data": {
+            "type": "F",
+            "id": "25486",
+            "name": "MH 12 Pav Bhaji",
+            "uuid": "bd5c545b-4088-4cdc-90d6-12ae59e3b84c",
+            "city": "6",
+            "area": "Rasta Peth",
+            "totalRatingsString": "10000+ ratings",
+            "cloudinaryImageId": "cgf7qsoqsvfwletamxt4",
+            "cuisines": [
+                "Snacks",
+                "Pizzas",
+                "Beverages",
+                "Street Food"
+            ],
+            "tags": [],
+            "costForTwo": 25000,
+            "costForTwoString": "₹250 FOR TWO",
+            "deliveryTime": 30,
+            "minDeliveryTime": 30,
+            "maxDeliveryTime": 30,
+            "slaString": "30 MINS",
+            "lastMileTravel": 1.2000000476837158,
+            "slugs": {
+                "restaurant": "mh-12-pav-bhaji-rasta-peth-swargate",
+                "city": "pune"
+            },
+            "cityState": "6",
+            "address": "326, Near Laxmi Sugandhalay, Rasta Peth, Pune",
+            "locality": "",
+            "parentId": 8970,
+            "unserviceable": false,
+            "veg": true,
+            "select": false,
+            "favorite": false,
+            "tradeCampaignHeaders": [],
+            "chain": [],
+            "feeDetails": {
+                "fees": [
+                    {
+                        "name": "distance",
+                        "fee": 3000,
+                        "message": ""
+                    },
+                    {
+                        "name": "time",
+                        "fee": 0,
+                        "message": ""
+                    },
+                    {
+                        "name": "special",
+                        "fee": 0,
+                        "message": ""
+                    }
+                ],
+                "totalFees": 3000,
+                "message": "",
+                "title": "Delivery Charge",
+                "amount": "3000",
+                "icon": ""
+            },
+            "availability": {
+                "opened": true,
+                "nextOpenMessage": "",
+                "nextCloseMessage": ""
+            },
+            "longDistanceEnabled": 0,
+            "rainMode": "NONE",
+            "thirdPartyAddress": false,
+            "thirdPartyVendor": "",
+            "adTrackingID": "",
+            "badges": {
+                "imageBased": [],
+                "textBased": [],
+                "textExtendedBadges": []
+            },
+            "lastMileTravelString": "1.2 kms",
+            "hasSurge": false,
+            "aggregatedDiscountInfoV3": {
+                "header": "10% OFF",
+                "subHeader": "UPTO ₹40",
+                "discountTag": "",
+                "headerTypeV2": 0
+            },
+            "sla": {
+                "restaurantId": "25486",
+                "deliveryTime": 30,
+                "minDeliveryTime": 30,
+                "maxDeliveryTime": 30,
+                "lastMileTravel": 1.2000000476837158,
+                "lastMileDistance": 0,
+                "serviceability": "SERVICEABLE",
+                "rainMode": "NONE",
+                "longDistance": "NOT_LONG_DISTANCE",
+                "preferentialService": false,
+                "iconType": "EMPTY"
+            },
+            "promoted": false,
+            "avgRating": "4.1",
+            "totalRatings": 10000,
+            "new": false
+        },
+        "subtype": "basic"
+    },
+    {
+        "type": "restaurant",
+        "data": {
+            "type": "F",
+            "id": "25396",
+            "name": "Oven Story Pizza",
+            "uuid": "e80fa0ae-d702-4ac7-adc4-76590e2409ab",
+            "city": "6",
+            "area": "Narayan Peth",
+            "totalRatingsString": "1000+ ratings",
+            "cloudinaryImageId": "ab979bffbd658e74de650a15ca0092a3",
+            "cuisines": [
+                "Pizzas",
+                "Pastas",
+                "Italian",
+                "Desserts",
+                "Beverages"
+            ],
+            "tags": [],
+            "costForTwo": 40000,
+            "costForTwoString": "₹400 FOR TWO",
+            "deliveryTime": 34,
+            "minDeliveryTime": 29,
+            "maxDeliveryTime": 39,
+            "slaString": "29-39 MINS",
+            "lastMileTravel": 0.4000000059604645,
+            "slugs": {
+                "restaurant": "ovenstory-pizza-model-colony-swargate",
+                "city": "pune"
+            },
+            "cityState": "6",
+            "address": "S.no 457, Near V S Waikar & Sons Jewellers, Shaniwar Peth ,Pune 411030",
+            "locality": "Shaniwar Peth",
+            "parentId": 3534,
+            "unserviceable": false,
+            "veg": false,
+            "select": false,
+            "favorite": false,
+            "tradeCampaignHeaders": [],
+            "chain": [],
+            "feeDetails": {
+                "fees": [
+                    {
+                        "name": "distance",
+                        "fee": 3200,
+                        "message": ""
+                    },
+                    {
+                        "name": "time",
+                        "fee": 0,
+                        "message": ""
+                    },
+                    {
+                        "name": "special",
+                        "fee": 0,
+                        "message": ""
+                    }
+                ],
+                "totalFees": 3200,
+                "message": "",
+                "title": "Delivery Charge",
+                "amount": "3200",
+                "icon": ""
+            },
+            "availability": {
+                "opened": true,
+                "nextOpenMessage": "",
+                "nextCloseMessage": ""
+            },
+            "longDistanceEnabled": 0,
+            "rainMode": "NONE",
+            "thirdPartyAddress": false,
+            "thirdPartyVendor": "",
+            "adTrackingID": "",
+            "badges": {
+                "imageBased": [],
+                "textBased": [],
+                "textExtendedBadges": []
+            },
+            "lastMileTravelString": "0.4 kms",
+            "hasSurge": false,
+            "aggregatedDiscountInfoV3": {
+                "header": "40% OFF",
+                "subHeader": "UPTO ₹80",
+                "discountTag": "",
+                "headerTypeV2": 0
+            },
+            "sla": {
+                "restaurantId": "25396",
+                "deliveryTime": 34,
+                "minDeliveryTime": 29,
+                "maxDeliveryTime": 39,
+                "lastMileTravel": 0.4000000059604645,
+                "lastMileDistance": 0,
+                "serviceability": "SERVICEABLE",
+                "rainMode": "NONE",
+                "longDistance": "NOT_LONG_DISTANCE",
+                "preferentialService": false,
+                "iconType": "EMPTY"
+            },
+            "promoted": false,
+            "avgRating": "4.3",
+            "totalRatings": 1000,
+            "new": false
+        },
+        "subtype": "basic"
+    },
+    {
+        "type": "restaurant",
+        "data": {
+            "type": "F",
+            "id": "394784",
+            "name": "Theobroma",
+            "uuid": "90436c1e-0284-4602-883e-41fba8a059e9",
+            "city": "6",
+            "area": "Shivajinagar",
+            "totalRatingsString": "1000+ ratings",
+            "cloudinaryImageId": "asd7v64r8hjmbx5nivyh",
+            "cuisines": [
+                "Bakery",
+                "Desserts"
+            ],
+            "tags": [],
+            "costForTwo": 50000,
+            "costForTwoString": "₹500 FOR TWO",
+            "deliveryTime": 28,
+            "minDeliveryTime": 28,
+            "maxDeliveryTime": 28,
+            "slaString": "28 MINS",
+            "lastMileTravel": 2.299999952316284,
+            "slugs": {
+                "restaurant": "theobroma-shivaji-nagar-shivaji-nagar",
+                "city": "pune"
+            },
+            "cityState": "6",
+            "address": "H NO. 573/2, SHIVAJI NAGAR, PUNE, Karve Road, Pune PMC, Maharashtra, 411004",
+            "locality": "Karve Road",
+            "parentId": 1040,
+            "unserviceable": false,
+            "veg": false,
+            "select": false,
+            "favorite": false,
+            "tradeCampaignHeaders": [],
+            "ribbon": [
+                {
+                    "type": "PROMOTED"
+                }
+            ],
+            "chain": [],
+            "feeDetails": {
+                "fees": [
+                    {
+                        "name": "distance",
+                        "fee": 3200,
+                        "message": ""
+                    },
+                    {
+                        "name": "time",
+                        "fee": 0,
+                        "message": ""
+                    },
+                    {
+                        "name": "special",
+                        "fee": 0,
+                        "message": ""
+                    }
+                ],
+                "totalFees": 3200,
+                "message": "",
+                "title": "Delivery Charge",
+                "amount": "3200",
+                "icon": ""
+            },
+            "availability": {
+                "opened": true,
+                "nextOpenMessage": "",
+                "nextCloseMessage": ""
+            },
+            "longDistanceEnabled": 0,
+            "rainMode": "NONE",
+            "thirdPartyAddress": false,
+            "thirdPartyVendor": "",
+            "adTrackingID": "cid=7262236~p=13~eid=00000189-11a1-5cdf-2515-df4100c80d67~srvts=1688217935071",
+            "badges": {
+                "imageBased": [],
+                "textBased": [],
+                "textExtendedBadges": []
+            },
+            "lastMileTravelString": "2.2 kms",
+            "hasSurge": false,
+            "aggregatedDiscountInfoV3": {
+                "header": "10% OFF",
+                "subHeader": "ABOVE ₹159",
+                "discountTag": "FLAT DEAL",
+                "headerTypeV2": 0
+            },
+            "sla": {
+                "restaurantId": "394784",
+                "deliveryTime": 28,
+                "minDeliveryTime": 28,
+                "maxDeliveryTime": 28,
+                "lastMileTravel": 2.299999952316284,
+                "lastMileDistance": 0,
+                "serviceability": "SERVICEABLE",
+                "rainMode": "NONE",
+                "longDistance": "NOT_LONG_DISTANCE",
+                "preferentialService": false,
+                "iconType": "EMPTY"
+            },
+            "promoted": true,
+            "avgRating": "4.5",
+            "totalRatings": 1000,
+            "new": false
+        },
+        "subtype": "basic"
+    },
+    {
+        "type": "restaurant",
+        "data": {
+            "type": "F",
+            "id": "18808",
+            "name": "Faasos - Wraps & Rolls",
+            "uuid": "e4e6312a-96fd-4e7c-b924-e109cf7df89a",
+            "city": "6",
+            "area": "Shaniwar Peth",
+            "totalRatingsString": "10000+ ratings",
+            "cloudinaryImageId": "af33b81798b11deba338e94b7585d348",
+            "cuisines": [
+                "Kebabs",
+                "Fast Food",
+                "Snacks",
+                "North Indian",
+                "American",
+                "Healthy Food",
+                "Desserts",
+                "Beverages"
+            ],
+            "tags": [],
+            "costForTwo": 20000,
+            "costForTwoString": "₹200 FOR TWO",
+            "deliveryTime": 26,
+            "minDeliveryTime": 26,
+            "maxDeliveryTime": 26,
+            "slaString": "26 MINS",
+            "lastMileTravel": 0.4000000059604645,
+            "slugs": {
+                "restaurant": "fassos-subhamangal-housing-society-shivaji-nagar",
+                "city": "pune"
+            },
+            "cityState": "6",
+            "address": "S.no 457 shaniwar peth ,Pune 411030",
+            "locality": "Shaniwar Peth FC",
+            "parentId": 21809,
+            "unserviceable": false,
+            "veg": false,
+            "select": false,
+            "favorite": false,
+            "tradeCampaignHeaders": [],
+            "chain": [],
+            "feeDetails": {
+                "fees": [
+                    {
+                        "name": "distance",
+                        "fee": 3200,
+                        "message": ""
+                    },
+                    {
+                        "name": "time",
+                        "fee": 0,
+                        "message": ""
+                    },
+                    {
+                        "name": "special",
+                        "fee": 0,
+                        "message": ""
+                    }
+                ],
+                "totalFees": 3200,
+                "message": "",
+                "title": "Delivery Charge",
+                "amount": "3200",
+                "icon": ""
+            },
+            "availability": {
+                "opened": true,
+                "nextOpenMessage": "",
+                "nextCloseMessage": ""
+            },
+            "longDistanceEnabled": 0,
+            "rainMode": "NONE",
+            "thirdPartyAddress": false,
+            "thirdPartyVendor": "",
+            "adTrackingID": "",
+            "badges": {
+                "imageBased": [],
+                "textBased": [],
+                "textExtendedBadges": []
+            },
+            "lastMileTravelString": "0.4 kms",
+            "hasSurge": false,
+            "aggregatedDiscountInfoV3": {
+                "header": "50% OFF",
+                "subHeader": "UPTO ₹100",
+                "discountTag": "",
+                "headerTypeV2": 0
+            },
+            "sla": {
+                "restaurantId": "18808",
+                "deliveryTime": 26,
+                "minDeliveryTime": 26,
+                "maxDeliveryTime": 26,
+                "lastMileTravel": 0.4000000059604645,
+                "lastMileDistance": 0,
+                "serviceability": "SERVICEABLE",
+                "rainMode": "NONE",
+                "longDistance": "NOT_LONG_DISTANCE",
+                "preferentialService": false,
+                "iconType": "EMPTY"
+            },
+            "promoted": false,
+            "avgRating": "4.3",
+            "totalRatings": 10000,
+            "new": false
+        },
+        "subtype": "basic"
+    },
+    {
+        "type": "restaurant",
+        "data": {
+            "type": "F",
+            "id": "491702",
+            "name": "Naadbramha Idli",
+            "uuid": "cb7035f8-ee39-4707-8e8a-1ac65c32af1d",
+            "city": "6",
+            "area": "Swargate",
+            "totalRatingsString": "50+ ratings",
+            "cloudinaryImageId": "ydrbvdsobyfzyapbkdmj",
+            "cuisines": [
+                "South Indian"
+            ],
+            "tags": [],
+            "costForTwo": 10000,
+            "costForTwoString": "₹100 FOR TWO",
+            "deliveryTime": 25,
+            "minDeliveryTime": 25,
+            "maxDeliveryTime": 25,
+            "slaString": "25 MINS",
+            "lastMileTravel": 0.30000001192092896,
+            "slugs": {
+                "restaurant": "naadbramha-idli-swargate-swargate",
+                "city": "pune"
+            },
+            "cityState": "6",
+            "address": "Shop No.3 ,Ground floor H.No.184 A/MP 2, Shivaji road,Kasba peth,pune-411011",
+            "locality": "Rasta Peth",
+            "parentId": 251339,
+            "unserviceable": false,
+            "veg": false,
+            "select": false,
+            "favorite": false,
+            "tradeCampaignHeaders": [],
+            "chain": [],
+            "feeDetails": {
+                "fees": [
+                    {
+                        "name": "distance",
+                        "fee": 3000,
+                        "message": ""
+                    },
+                    {
+                        "name": "time",
+                        "fee": 0,
+                        "message": ""
+                    },
+                    {
+                        "name": "special",
+                        "fee": 0,
+                        "message": ""
+                    }
+                ],
+                "totalFees": 3000,
+                "message": "",
+                "title": "Delivery Charge",
+                "amount": "3000",
+                "icon": ""
+            },
+            "availability": {
+                "opened": true,
+                "nextOpenMessage": "",
+                "nextCloseMessage": "Closes soon"
+            },
+            "longDistanceEnabled": 0,
+            "rainMode": "NONE",
+            "thirdPartyAddress": false,
+            "thirdPartyVendor": "",
+            "adTrackingID": "",
+            "badges": {
+                "imageBased": [],
+                "textBased": [],
+                "textExtendedBadges": []
+            },
+            "lastMileTravelString": "0.3 kms",
+            "hasSurge": false,
+            "sla": {
+                "restaurantId": "491702",
+                "deliveryTime": 25,
+                "minDeliveryTime": 25,
+                "maxDeliveryTime": 25,
+                "lastMileTravel": 0.30000001192092896,
+                "lastMileDistance": 0,
+                "serviceability": "SERVICEABLE",
+                "rainMode": "NONE",
+                "longDistance": "NOT_LONG_DISTANCE",
+                "preferentialService": false,
+                "iconType": "EMPTY"
+            },
+            "promoted": false,
+            "avgRating": "4.6",
+            "totalRatings": 50,
+            "new": false
+        },
+        "subtype": "basic"
+    },
+    {
+        "type": "restaurant",
+        "data": {
+            "type": "F",
+            "id": "62934",
+            "name": "LunchBox - Meals and Thalis",
+            "uuid": "adc8ae31-eff6-406f-b5ab-541eb74f4e3d",
+            "city": "6",
+            "area": "Narayan Peth",
+            "totalRatingsString": "5000+ ratings",
+            "cloudinaryImageId": "chs0jbyj2osyqumr1wiu",
+            "cuisines": [
+                "Biryani",
+                "North Indian",
+                "Punjabi",
+                "Healthy Food",
+                "Desserts",
+                "Beverages"
+            ],
+            "tags": [],
+            "costForTwo": 20000,
+            "costForTwoString": "₹200 FOR TWO",
+            "deliveryTime": 31,
+            "minDeliveryTime": 31,
+            "maxDeliveryTime": 31,
+            "slaString": "31 MINS",
+            "lastMileTravel": 0.4000000059604645,
+            "slugs": {
+                "restaurant": "lunchbox-shaniwar-peth-swargate",
+                "city": "pune"
+            },
+            "cityState": "6",
+            "address": "S.no 457 shaniwar peth ,Pune 411030",
+            "locality": "Shaniwar Peth",
+            "parentId": 4925,
+            "unserviceable": false,
+            "veg": false,
+            "select": false,
+            "favorite": false,
+            "tradeCampaignHeaders": [],
+            "chain": [],
+            "feeDetails": {
+                "fees": [
+                    {
+                        "name": "distance",
+                        "fee": 3200,
+                        "message": ""
+                    },
+                    {
+                        "name": "time",
+                        "fee": 0,
+                        "message": ""
+                    },
+                    {
+                        "name": "special",
+                        "fee": 0,
+                        "message": ""
+                    }
+                ],
+                "totalFees": 3200,
+                "message": "",
+                "title": "Delivery Charge",
+                "amount": "3200",
+                "icon": ""
+            },
+            "availability": {
+                "opened": true,
+                "nextOpenMessage": "",
+                "nextCloseMessage": ""
+            },
+            "longDistanceEnabled": 0,
+            "rainMode": "NONE",
+            "thirdPartyAddress": false,
+            "thirdPartyVendor": "",
+            "adTrackingID": "",
+            "badges": {
+                "imageBased": [],
+                "textBased": [],
+                "textExtendedBadges": []
+            },
+            "lastMileTravelString": "0.4 kms",
+            "hasSurge": false,
+            "aggregatedDiscountInfoV3": {
+                "header": "₹125 OFF",
+                "subHeader": "ABOVE ₹299",
+                "discountTag": "FLAT DEAL",
+                "headerTypeV2": 0
+            },
+            "sla": {
+                "restaurantId": "62934",
+                "deliveryTime": 31,
+                "minDeliveryTime": 31,
+                "maxDeliveryTime": 31,
+                "lastMileTravel": 0.4000000059604645,
+                "lastMileDistance": 0,
+                "serviceability": "SERVICEABLE",
+                "rainMode": "NONE",
+                "longDistance": "NOT_LONG_DISTANCE",
+                "preferentialService": false,
+                "iconType": "EMPTY"
+            },
+            "promoted": false,
+            "avgRating": "4.0",
+            "totalRatings": 5000,
+            "new": false
+        },
+        "subtype": "basic"
+    }
+];
+const Title = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-        href: "#",
-        children: "React"
+        href: "/",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+            className: "logo",
+            src: "https://s3.amazonaws.com/thumbnails.venngage.com/template/9f596769-790d-4b5f-bb80-668016a9c920.png",
+            alt: "logo"
+        }, void 0, false, {
+            fileName: "app.js",
+            lineNumber: 696,
+            columnNumber: 13
+        }, undefined)
     }, void 0, false, {
         fileName: "app.js",
-        lineNumber: 21,
+        lineNumber: 695,
         columnNumber: 10
     }, undefined);
 };
-_c3 = Logo;
-const SearchBar = ()=>{
+_c = Title;
+const Header = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "header",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Title, {}, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 700,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "nav-items",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: "Home"
+                        }, void 0, false, {
+                            fileName: "app.js",
+                            lineNumber: 703,
+                            columnNumber: 17
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: "About"
+                        }, void 0, false, {
+                            fileName: "app.js",
+                            lineNumber: 704,
+                            columnNumber: 17
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: "Contact"
+                        }, void 0, false, {
+                            fileName: "app.js",
+                            lineNumber: 705,
+                            columnNumber: 17
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                                    className: "fa-solid fa-cart-arrow-down"
+                                }, void 0, false, {
+                                    fileName: "app.js",
+                                    lineNumber: 706,
+                                    columnNumber: 21
+                                }, undefined),
+                                " Cart"
+                            ]
+                        }, void 0, true, {
+                            fileName: "app.js",
+                            lineNumber: 706,
+                            columnNumber: 17
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "app.js",
+                    lineNumber: 702,
+                    columnNumber: 13
+                }, undefined)
+            }, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 701,
+                columnNumber: 9
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "app.js",
+        lineNumber: 699,
+        columnNumber: 22
+    }, undefined);
+_c1 = Header;
+const Body = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "restaurant-list",
+        children: restrauntList.map((restaurant)=>{
+            return /*#__PURE__*/ (0, _react.createElement)(RestrauntCard, {
+                ...restaurant.data,
+                key: restaurant.data.id,
+                __source: {
+                    fileName: "app.js",
+                    lineNumber: 712,
+                    columnNumber: 12
+                },
+                __self: undefined
+            });
+        })
+    }, void 0, false, {
+        fileName: "app.js",
+        lineNumber: 710,
+        columnNumber: 20
+    }, undefined);
+_c2 = Body;
+const Footer = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+        children: "Footer"
+    }, void 0, false, {
+        fileName: "app.js",
+        lineNumber: 715,
+        columnNumber: 22
+    }, undefined);
+_c3 = Footer;
+const RestrauntCard = ({ name , cloudinaryImageId , cuisines , lastMileTravelString  })=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "card",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                src: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + cloudinaryImageId,
+                alt: ""
+            }, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 722,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                children: name
+            }, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 723,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                children: cuisines.join(", ")
+            }, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 724,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                children: [
+                    lastMileTravelString,
+                    " minutes"
+                ]
+            }, void 0, true, {
+                fileName: "app.js",
+                lineNumber: 725,
+                columnNumber: 9
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "app.js",
+        lineNumber: 721,
+        columnNumber: 7
+    }, undefined);
+_c4 = RestrauntCard;
+//navbar component
+const AppLayout = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                type: "text",
-                placeholder: "Search.."
-            }, "2.1", false, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Header, {}, void 0, false, {
                 fileName: "app.js",
-                lineNumber: 25,
+                lineNumber: 731,
                 columnNumber: 13
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                className: "btn",
-                type: "submit",
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                    className: "fa fa-search"
-                }, void 0, false, {
-                    fileName: "app.js",
-                    lineNumber: 26,
-                    columnNumber: 63
-                }, undefined)
-            }, "2.btn", false, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Body, {}, void 0, false, {
                 fileName: "app.js",
-                lineNumber: 26,
+                lineNumber: 732,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Footer, {}, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 733,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true);
 };
-_c4 = SearchBar;
-const UserIcon = ()=>{
-    return(// <div>
-    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-        className: "fa-solid fa-user"
-    }, void 0, false, {
-        fileName: "app.js",
-        lineNumber: 32,
-        columnNumber: 5
-    }, undefined));
-};
-_c5 = UserIcon;
-//navbar component
-const Navbar = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        id: "last",
-        class: "bar",
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-            id: "nav-items",
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                    className: "logo",
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Logo, {}, void 0, false, {
-                        fileName: "app.js",
-                        lineNumber: 42,
-                        columnNumber: 21
-                    }, undefined)
-                }, "logo", false, {
-                    fileName: "app.js",
-                    lineNumber: 41,
-                    columnNumber: 17
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                    className: "search",
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(SearchBar, {}, void 0, false, {
-                        fileName: "app.js",
-                        lineNumber: 45,
-                        columnNumber: 21
-                    }, undefined)
-                }, "search", false, {
-                    fileName: "app.js",
-                    lineNumber: 44,
-                    columnNumber: 17
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(UserIcon, {}, void 0, false, {
-                        fileName: "app.js",
-                        lineNumber: 48,
-                        columnNumber: 21
-                    }, undefined)
-                }, "user", false, {
-                    fileName: "app.js",
-                    lineNumber: 47,
-                    columnNumber: 17
-                }, undefined)
-            ]
-        }, void 0, true, {
-            fileName: "app.js",
-            lineNumber: 40,
-            columnNumber: 13
-        }, undefined)
-    }, void 0, false, {
-        fileName: "app.js",
-        lineNumber: 39,
-        columnNumber: 10
-    }, undefined);
-};
-_c6 = Navbar;
+_c5 = AppLayout;
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
-root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Navbar, {}, void 0, false, {
+root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AppLayout, {}, void 0, false, {
     fileName: "app.js",
-    lineNumber: 54,
+    lineNumber: 737,
     columnNumber: 13
 }, undefined));
-var _c, _c1, _c2, _c3, _c4, _c5, _c6;
-$RefreshReg$(_c, "Title2");
-$RefreshReg$(_c1, "Title3");
-$RefreshReg$(_c2, "Header");
-$RefreshReg$(_c3, "Logo");
-$RefreshReg$(_c4, "SearchBar");
-$RefreshReg$(_c5, "UserIcon");
-$RefreshReg$(_c6, "Navbar");
+var _c, _c1, _c2, _c3, _c4, _c5;
+$RefreshReg$(_c, "Title");
+$RefreshReg$(_c1, "Header");
+$RefreshReg$(_c2, "Body");
+$RefreshReg$(_c3, "Footer");
+$RefreshReg$(_c4, "RestrauntCard");
+$RefreshReg$(_c5, "AppLayout");
 
   $parcel$ReactRefreshHelpers$6024.postlude(module);
 } finally {

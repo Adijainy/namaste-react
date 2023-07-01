@@ -1,55 +1,45 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: Inter, sans-serif;
 }
 
-.bar {
-  background-color: #8db1c1;
-  padding: .1rem 0;
+.header {
+  color: #fff;
+  background-color: #212121;
+  justify-content: space-between;
+  padding: 0 3rem;
+  display: flex;
 }
 
-a {
-  color: #000;
-  font-family: Ultra, serif;
-  font-size: 1.5rem;
-  text-decoration: none;
+.nav-items > ul {
+  list-style-type: none;
+  display: flex;
 }
 
-img {
-  width: 1.7rem;
+.nav-items > ul > li {
+  padding: 1rem;
+  font-family: Roboto, sans-serif;
 }
 
-input[type="text"] {
-  border: 1px solid #ccc;
-  padding: .5rem;
+.logo {
+  width: 5rem;
 }
 
-.btn {
-  border: 1px solid #ccc;
-  border-top-right-radius: .2rem;
-  border-bottom-right-radius: .2rem;
-  padding: .5rem;
+.card {
+  border: 1px solid #000;
+  width: 18rem;
+  margin: 1.4rem;
+  padding: 1rem;
 }
 
-.btn:hover {
-  background-color: #ccc;
+.card > img {
+  width: 100%;
 }
 
-i {
-  font-size: 1.4rem;
-}
-
-li {
-  list-style: none;
-  display: inline;
-}
-
-.search {
-  margin: 0 40rem 0 30rem;
-}
-
-.search i {
-  font-size: .9rem;
+.restaurant-list {
+  flex-wrap: wrap;
+  display: flex;
 }
 
 /*# sourceMappingURL=index.1303bb05.css.map */

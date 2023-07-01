@@ -1,0 +1,36 @@
+● - Is JSX mandatory for React? -No
+
+● - Is ES6 mandatory for React? -No
+
+● - How can I write comments in JSX?
+A- write comments inside {Js normal comments}
+- {/* {comments} */} <- this way
+
+● - What is <React.Fragment></React.Fragment> and <></> ?
+A- Both are equivalent. It is like an empty tag and does not show up on html.
+
+● - What is Virtual DOM?
+A- representation of real DOM and synced with the “real” DOM by a library such as ReactDOM.
+
+● - What is Reconciliation in React?
+A- Reconciliation is the process by which React updates the UI to reflect changes in the component state.
+-it uses a diff algo which finds out the difference b/w trees and will only rerender the portion that is required
+
+● - What is React Fiber?
+A- React Fiber is a concept of ReactJS that is used to render a system faster and smoother. 
+
+● - Why we need keys in React? When do we need keys in React?
+A- Keys help React identify which items have changed, are added, or are removed.
+- without keys, react will not know the order of the child elements if another one is added, so it will re-render everything
+-if key is given, then react will exactly remember what needs to be updated.
+
+● - Can we use index as keys in React?
+A- never use index as keys
+
+● - What is props in React? Ways to
+A- Props are nothing but properties. It is data you push in form of attributes.
+-When React sees an element representing a user-defined component, it passes JSX attributes and children to this component as a single object. We call this object “props”.
+
+● - What is a Config Driven UI ?
+A- In a configuration-driven UI, the layout, styles, and other properties of UI elements are defined in a configuration file or database, which can be easily modified without requiring changes to the codebase.
+-(notes) All the UI on the page is configured by the data sent by backend through APIs.

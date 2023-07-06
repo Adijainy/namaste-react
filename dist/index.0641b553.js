@@ -2969,23 +2969,22 @@ var _footerDefault = parcelHelpers.interopDefault(_footer);
 -Footer
     -Links
     -Copyright
-*/ //navbar component
-const AppLayout = ()=>{
+*/ const AppLayout = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
                 fileName: "src/app.js",
-                lineNumber: 28,
+                lineNumber: 27,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyDefault.default), {}, void 0, false, {
                 fileName: "src/app.js",
-                lineNumber: 29,
+                lineNumber: 28,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerDefault.default), {}, void 0, false, {
                 fileName: "src/app.js",
-                lineNumber: 30,
+                lineNumber: 29,
                 columnNumber: 13
             }, undefined)
         ]
@@ -2995,7 +2994,7 @@ _c = AppLayout;
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AppLayout, {}, void 0, false, {
     fileName: "src/app.js",
-    lineNumber: 34,
+    lineNumber: 33,
     columnNumber: 13
 }, undefined));
 var _c;
@@ -27480,25 +27479,77 @@ var _react = require("react");
 var _restaurantCard = require("./RestaurantCard");
 var _restaurantCardDefault = parcelHelpers.interopDefault(_restaurantCard);
 var _constant = require("../constant");
-const Body = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "restaurant-list",
-        children: (0, _constant.restaurantList).map((restaurant)=>{
-            return /*#__PURE__*/ (0, _react.createElement)((0, _restaurantCardDefault.default), {
-                ...restaurant.data,
-                key: restaurant.data.id,
-                __source: {
-                    fileName: "src/components/Body.js",
-                    lineNumber: 5,
-                    columnNumber: 12
-                },
-                __self: undefined
-            });
-        })
-    }, void 0, false, {
-        fileName: "src/components/Body.js",
-        lineNumber: 3,
-        columnNumber: 20
-    }, undefined);
+var _s = $RefreshSig$();
+//function to filter data
+function filterData(searchText, restaurants) {
+    const filteredData = restaurants.filter((restaurant)=>restaurant.data.name.includes(searchText));
+    return filteredData;
+}
+const Body = ()=>{
+    _s();
+    const [restaurants, setRestaurants] = (0, _react.useState)((0, _constant.restaurantList));
+    const [searchText, setSearchText] = (0, _react.useState)("");
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "search-container",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        type: "text",
+                        className: "search-input",
+                        placeholder: "Search",
+                        value: searchText,
+                        onChange: (e)=>{
+                            setSearchText(e.target.value);
+                        }
+                    }, void 0, false, {
+                        fileName: "src/components/Body.js",
+                        lineNumber: 15,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        className: "search-button",
+                        onClick: ()=>{
+                            //filterdata
+                            const data = filterData(searchText, restaurants);
+                            //update with new data
+                            setRestaurants(data);
+                        },
+                        children: "Search"
+                    }, void 0, false, {
+                        fileName: "src/components/Body.js",
+                        lineNumber: 18,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/Body.js",
+                lineNumber: 14,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "restaurant-list",
+                children: restaurants.map((restaurant)=>{
+                    return /*#__PURE__*/ (0, _react.createElement)((0, _restaurantCardDefault.default), {
+                        ...restaurant.data,
+                        key: restaurant.data.id,
+                        __source: {
+                            fileName: "src/components/Body.js",
+                            lineNumber: 30,
+                            columnNumber: 16
+                        },
+                        __self: undefined
+                    });
+                })
+            }, void 0, false, {
+                fileName: "src/components/Body.js",
+                lineNumber: 28,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true);
+};
+_s(Body, "R670WQcQR09XVkJ/Uv2E54gNhok=");
 _c = Body;
 exports.default = Body;
 var _c;

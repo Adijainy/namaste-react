@@ -26,6 +26,16 @@ body {
   width: 5rem;
 }
 
+.search-container {
+  justify-content: center;
+  margin: 1rem 0 0;
+  display: flex;
+}
+
+.search-container > input {
+  padding: .3rem 1rem .3rem .3rem;
+}
+
 .card {
   border: 1px solid #000;
   width: 18rem;

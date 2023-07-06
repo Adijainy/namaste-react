@@ -1,42 +1,44 @@
-body{
-    margin: 0;
-    padding: 0;
-    font-family: 'Inter', sans-serif;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
 }
-.header{
-    display: flex;
-    justify-content: space-between;
-    padding: 0 3rem;
-    background-color: #212121;
-    color: white;
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 3rem;
+  background-color: #212121;
+  color: white;
 }
-.nav-items > ul{
-    list-style-type: none;
-    display: flex;
+.nav-items > ul {
+  list-style-type: none;
+  display: flex;
 }
-.nav-items >ul >li{
-    padding: 1rem;
-    font-family: 'Roboto', sans-serif;
+.nav-items > ul > li {
+  padding: 1rem;
+  font-family: "Roboto", sans-serif;
 }
-.logo{
-    width: 5rem;
+.logo {
+  width: 5rem;
 }
-.card{
-    width: 18rem;
-    border: 1px solid black;
-    padding: 1rem;
-    margin: 1.4rem;
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0 0 0;
 }
-.card > img{
-    width: 100%;
+.search-container > input {
+  padding: 0.3rem 1rem 0.3rem 0.3rem;
 }
-.restaurant-list{
-    display: flex;
-    flex-wrap: wrap;
+.card {
+  width: 18rem;
+  border: 1px solid black;
+  padding: 1rem;
+  margin: 1.4rem;
 }
-
-
-
-
-
-
+.card > img {
+  width: 100%;
+}
+.restaurant-list {
+  display: flex;
+  flex-wrap: wrap;
+}

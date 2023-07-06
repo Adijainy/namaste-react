@@ -1,2 +1,2 @@
-# namaste-react
+# React
 My react learning journey

@@ -1,0 +1,66 @@
+● - What is a Microservice?
+A- Microservices are an architectural and organizational approach to software development where software is composed of small independent services that communicate over well-defined APIs. These services are owned by small, self-contained teams.
+- Microservices architectures make applications easier to scale and faster to develop, enabling innovation and accelerating time-to-market for new features.
+- Because they are independently run, each service can be updated, deployed, and scaled to meet demand for specific functions of an application.
+
+● - What is Monolith architecture?
+A- With monolithic architectures, all processes are tightly coupled and run as a single service. This means that if one process of the application experiences a spike in demand, the entire architecture must be scaled. 
+- Adding or improving a monolithic application’s features becomes more complex as the code base grows.
+
+● - What is the difference between Monolith and Microservice?
+A- Monolithic applications typically consist of a client-side UI, a database, and a server-side application. Developers build all of these modules on a single code base. 
+- On the other hand, in a distributed architecture, each microservice works to accomplish a single feature or business logic.
+
+● - Why do we need a useEffect Hook?
+A- The useEffect Hook allows you to perform side effects in your components. Some examples of side effects are: fetching data, directly updating the DOM, and timers.
+- it takes two arguments, (1) Call back function (2) dependency array
+- eg: useEffect(() => {
+    //Api call
+    getRestaurant();
+  }, []);
+
+● - What is Optional Chaining?
+A- The ?. operator is like the (.) chaining operator, except that instead of causing an error if a reference is nullish (null or undefined), the expression short-circuits with a return value of undefined. When used with function calls, it returns undefined if the given function does not exist.
+
+● - What is Shimmer UI?
+A- A shimmer UI is a version of the UI that doesn't contain actual content, but instead mimics the layout and shapes of the content that will eventually appear. 
+- It uses a gradient animation that creates a shimmering effect over the placeholders, giving the user a sense of motion and progress.
+
+● - What is the difference between JS expression and JS statement
+A- Statements create side effects to be useful, while expressions are values or execute to values.
+
+● - What is Conditional Rendering, explain with a code example
+A- In React, conditional rendering is the process of displaying different content based on certain conditions or states.
+- eg: if (isPacked) {
+        return null; //conditionally returning null can also return some jsx instead
+                    // return <li className="item">{name} ✔</li>;
+    }
+    return <li className="item">{name}</li>;
+
+● - What is CORS?
+A- Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allows a server to indicate any origins (domain, scheme, or port) other than its own from which a browser should permit loading resources.
+- For security reasons, browsers restrict cross-origin HTTP requests initiated from scripts.
+
+● - What is async and await?
+A- The async function declaration creates a binding of a new async function to a given name. The await keyword is permitted within the function body, enabling asynchronous, promise-based behavior to be written in a cleaner style and avoiding the need to explicitly configure promise chains.
+
+● - What is the use of `const json = await data.json();` in getRestaurants()
+A- the result is not JSON but is instead the result of taking JSON as input and parsing it to produce a JavaScript object.
+
+#Conditional (ternary) operator (? :) 
+- JavaScript has a compact syntax for writing a conditional expression — the conditional operator or “ternary operator”.
+
+-Instead of this:
+    if (isPacked) {
+    return <li className="item">{name} ✔</li>;
+    }
+    return <li className="item">{name}</li>;
+
+-You can write this:
+    return (
+    <li className="item">
+        {isPacked ? name + ' ✔' : name}
+    </li>
+    );
+
+- You can read it as “if isPacked is true, then (?) render name + ' ✔', otherwise (:) render name”.

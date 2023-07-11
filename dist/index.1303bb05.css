@@ -26,6 +26,11 @@ body {
   width: 5rem;
 }
 
+.login-btn {
+  color: #212121;
+  background-color: #fff;
+}
+
 .search-container {
   justify-content: center;
   margin: 1rem 0 0;
@@ -38,7 +43,7 @@ body {
 
 .card {
   border: 1px solid #000;
-  width: 18rem;
+  width: 14rem;
   margin: 1.4rem;
   padding: 1rem;
 }
@@ -47,9 +52,63 @@ body {
   width: 100%;
 }
 
-.restaurant-list {
+.card > h3 {
+  font-size: 1rem;
+}
+
+.card > h4 {
+  font-size: .9rem;
+}
+
+.restaurant-list, .container {
   flex-wrap: wrap;
   display: flex;
+}
+
+.shimmer-card {
+  box-sizing: border-box;
+  background: #ddd;
+  border-radius: 10px;
+  width: 16rem;
+  margin: 1.4rem;
+  padding: 1rem;
+  position: relative;
+}
+
+.line {
+  background: #bbb;
+  border-radius: 5px;
+  width: 100%;
+  height: 10px;
+  margin: 20px 0;
+}
+
+.img-block {
+  background: #bbb;
+  border-radius: 5px;
+  width: 100%;
+  height: 8rem;
+  margin: 20px 0 25px;
+}
+
+.shimmer {
+  background: linear-gradient(100deg, #fff0 20%, #ffffff80 50%, #fff0 80%);
+  width: 50%;
+  height: 100%;
+  animation: 2s linear infinite shimmer;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@keyframes shimmer {
+  from {
+    transform: translateX(-200%);
+  }
+
+  to {
+    transform: translateX(200%);
+  }
 }
 
 /*# sourceMappingURL=index.1303bb05.css.map */

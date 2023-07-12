@@ -2960,6 +2960,8 @@ var _errorDefault = parcelHelpers.interopDefault(_error);
 var _contact = require("./components/Contact");
 var _contactDefault = parcelHelpers.interopDefault(_contact);
 var _reactRouterDom = require("react-router-dom");
+var _restaurantMenu = require("./components/RestaurantMenu");
+var _restaurantMenuDefault = parcelHelpers.interopDefault(_restaurantMenu);
 /*
 -Header
     -Logo
@@ -2981,17 +2983,17 @@ var _reactRouterDom = require("react-router-dom");
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
                 fileName: "src/app.js",
-                lineNumber: 31,
+                lineNumber: 32,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Outlet), {}, void 0, false, {
                 fileName: "src/app.js",
-                lineNumber: 32,
+                lineNumber: 33,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerDefault.default), {}, void 0, false, {
                 fileName: "src/app.js",
-                lineNumber: 33,
+                lineNumber: 34,
                 columnNumber: 7
             }, undefined)
         ]
@@ -3003,12 +3005,12 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
         path: "/",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AppLayout, {}, void 0, false, {
             fileName: "src/app.js",
-            lineNumber: 38,
+            lineNumber: 39,
             columnNumber: 12
         }, undefined),
         errorElement: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _errorDefault.default), {}, void 0, false, {
             fileName: "src/app.js",
-            lineNumber: 39,
+            lineNumber: 40,
             columnNumber: 17
         }, undefined),
         children: [
@@ -3016,7 +3018,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyDefault.default), {}, void 0, false, {
                     fileName: "src/app.js",
-                    lineNumber: 42,
+                    lineNumber: 43,
                     columnNumber: 14
                 }, undefined)
             },
@@ -3024,7 +3026,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/about",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _aboutDefault.default), {}, void 0, false, {
                     fileName: "src/app.js",
-                    lineNumber: 45,
+                    lineNumber: 46,
                     columnNumber: 14
                 }, undefined)
             },
@@ -3032,7 +3034,15 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/contact",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contactDefault.default), {}, void 0, false, {
                     fileName: "src/app.js",
-                    lineNumber: 48,
+                    lineNumber: 49,
+                    columnNumber: 14
+                }, undefined)
+            },
+            {
+                path: "/restaurant/:id",
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantMenuDefault.default), {}, void 0, false, {
+                    fileName: "src/app.js",
+                    lineNumber: 52,
                     columnNumber: 14
                 }, undefined)
             }
@@ -3044,7 +3054,7 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.RouterP
     router: appRouter
 }, void 0, false, {
     fileName: "src/app.js",
-    lineNumber: 52,
+    lineNumber: 56,
     columnNumber: 13
 }, undefined));
 var _c;
@@ -3055,7 +3065,7 @@ $RefreshReg$(_c, "AppLayout");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./components/Header":"hsJbF","./components/Body":"8yaV8","./components/Footer":"8pPOA","./components/About":"9R1Eu","./components/Error":"kvula","react-router-dom":"9xmpe","./components/Contact":"cgAOG"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./components/Header":"hsJbF","./components/Body":"8yaV8","./components/Footer":"8pPOA","./components/About":"9R1Eu","./components/Error":"kvula","react-router-dom":"9xmpe","./components/Contact":"cgAOG","./components/RestaurantMenu":"8PuJ6"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -33330,11 +33340,12 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
 var _restaurantCard = require("./RestaurantCard");
 var _restaurantCardDefault = parcelHelpers.interopDefault(_restaurantCard);
+var _react = require("react");
 var _shimmerUI = require("./ShimmerUI");
 var _shimmerUIDefault = parcelHelpers.interopDefault(_shimmerUI);
+var _reactRouterDom = require("react-router-dom");
 var _s = $RefreshSig$();
 //function to filter data
 function filterData(searchText, restaurants) {
@@ -33362,7 +33373,7 @@ const Body = ()=>{
     if (!allRestaurants) return null;
     return allRestaurants?.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerUIDefault.default), {}, void 0, false, {
         fileName: "src/components/Body.js",
-        lineNumber: 29,
+        lineNumber: 30,
         columnNumber: 41
     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
@@ -33379,7 +33390,7 @@ const Body = ()=>{
                         }
                     }, void 0, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 31,
+                        lineNumber: 32,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -33393,32 +33404,36 @@ const Body = ()=>{
                         children: "Search"
                     }, void 0, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 34,
+                        lineNumber: 35,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Body.js",
-                lineNumber: 30,
+                lineNumber: 31,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "restaurant-list",
                 children: filteredRestaurants.map((restaurant)=>{
-                    return /*#__PURE__*/ (0, _react.createElement)((0, _restaurantCardDefault.default), {
-                        ...restaurant.data,
-                        key: restaurant.data.id,
-                        __source: {
+                    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                        to: "/restaurant/" + restaurant.data.id,
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantCardDefault.default), {
+                            ...restaurant.data
+                        }, void 0, false, {
                             fileName: "src/components/Body.js",
-                            lineNumber: 46,
-                            columnNumber: 16
-                        },
-                        __self: undefined
-                    });
+                            lineNumber: 48,
+                            columnNumber: 15
+                        }, undefined)
+                    }, restaurant.data.id, false, {
+                        fileName: "src/components/Body.js",
+                        lineNumber: 47,
+                        columnNumber: 16
+                    }, undefined);
                 })
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 44,
+                lineNumber: 45,
                 columnNumber: 7
             }, undefined)
         ]
@@ -33435,7 +33450,7 @@ $RefreshReg$(_c, "Body");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./RestaurantCard":"bMboU","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./ShimmerUI":"7lsvJ"}],"bMboU":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./RestaurantCard":"bMboU","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./ShimmerUI":"7lsvJ","react-router-dom":"9xmpe"}],"bMboU":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$ffb1 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -33501,453 +33516,455 @@ $RefreshReg$(_c, "RestaurauntCard");
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "IMG_CON_URL", ()=>IMG_CON_URL);
+parcelHelpers.export(exports, "MENU_ITEM_TYPE", ()=>MENU_ITEM_TYPE);
 parcelHelpers.export(exports, "restaurantList", ()=>restaurantList);
 const IMG_CON_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
+const MENU_ITEM_TYPE = "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory";
 const restaurantList = [
     {
-        "type": "restaurant",
-        "data": {
-            "type": "F",
-            "id": "576559",
-            "name": "Third Wave Coffee",
-            "uuid": "bba7640f-6b0c-493b-a260-3a05986a07ee",
-            "city": "6",
-            "area": "Karve Nagar",
-            "totalRatingsString": "100+ ratings",
-            "cloudinaryImageId": "0dca660dbdf2e04f9b861c4426ffd41e",
-            "cuisines": [
+        type: "restaurant",
+        data: {
+            type: "F",
+            id: "576559",
+            name: "Third Wave Coffee",
+            uuid: "bba7640f-6b0c-493b-a260-3a05986a07ee",
+            city: "6",
+            area: "Karve Nagar",
+            totalRatingsString: "100+ ratings",
+            cloudinaryImageId: "0dca660dbdf2e04f9b861c4426ffd41e",
+            cuisines: [
                 "Beverages",
                 "Fast Food",
                 "Snacks"
             ],
-            "tags": [],
-            "costForTwo": 40000,
-            "costForTwoString": "₹400 FOR TWO",
-            "deliveryTime": 37,
-            "minDeliveryTime": 37,
-            "maxDeliveryTime": 37,
-            "slaString": "37 MINS",
-            "lastMileTravel": 4.800000190734863,
-            "slugs": {
-                "restaurant": "third-wave-coffee-kothrud-kothrud",
-                "city": "pune"
+            tags: [],
+            costForTwo: 40000,
+            costForTwoString: "₹400 FOR TWO",
+            deliveryTime: 37,
+            minDeliveryTime: 37,
+            maxDeliveryTime: 37,
+            slaString: "37 MINS",
+            lastMileTravel: 4.800000190734863,
+            slugs: {
+                restaurant: "third-wave-coffee-kothrud-kothrud",
+                city: "pune"
             },
-            "cityState": "6",
-            "address": "SHOWROOM NO 1, GR FLOOR (MEZZANINE + BASEMENT) ,CASABLANCA APARTMENTS CONDOMINIUM, SY NO 16, NEAR KARISHMA COMPLEX ROAD, KOTHRUD, PUNE, Pune, Maharashtra-411029",
-            "locality": "Late GA Kulkarni Path",
-            "parentId": 274773,
-            "unserviceable": false,
-            "veg": false,
-            "select": false,
-            "favorite": false,
-            "tradeCampaignHeaders": [],
-            "ribbon": [
+            cityState: "6",
+            address: "SHOWROOM NO 1, GR FLOOR (MEZZANINE + BASEMENT) ,CASABLANCA APARTMENTS CONDOMINIUM, SY NO 16, NEAR KARISHMA COMPLEX ROAD, KOTHRUD, PUNE, Pune, Maharashtra-411029",
+            locality: "Late GA Kulkarni Path",
+            parentId: 274773,
+            unserviceable: false,
+            veg: false,
+            select: false,
+            favorite: false,
+            tradeCampaignHeaders: [],
+            ribbon: [
                 {
-                    "type": "PROMOTED"
+                    type: "PROMOTED"
                 }
             ],
-            "chain": [],
-            "feeDetails": {
-                "fees": [
+            chain: [],
+            feeDetails: {
+                fees: [
                     {
-                        "name": "distance",
-                        "fee": 4200,
-                        "message": ""
+                        name: "distance",
+                        fee: 4200,
+                        message: ""
                     },
                     {
-                        "name": "time",
-                        "fee": 0,
-                        "message": ""
+                        name: "time",
+                        fee: 0,
+                        message: ""
                     },
                     {
-                        "name": "special",
-                        "fee": 0,
-                        "message": ""
+                        name: "special",
+                        fee: 0,
+                        message: ""
                     }
                 ],
-                "totalFees": 4200,
-                "message": "",
-                "title": "Delivery Charge",
-                "amount": "4200",
-                "icon": ""
+                totalFees: 4200,
+                message: "",
+                title: "Delivery Charge",
+                amount: "4200",
+                icon: ""
             },
-            "availability": {
-                "opened": true,
-                "nextOpenMessage": "",
-                "nextCloseMessage": ""
+            availability: {
+                opened: true,
+                nextOpenMessage: "",
+                nextCloseMessage: ""
             },
-            "longDistanceEnabled": 0,
-            "rainMode": "NONE",
-            "thirdPartyAddress": false,
-            "thirdPartyVendor": "",
-            "adTrackingID": "cid=7304645~p=1~eid=00000189-11a1-5cdf-2515-df3d00c8017f~srvts=1688217935071",
-            "badges": {
-                "imageBased": [],
-                "textBased": [],
-                "textExtendedBadges": []
+            longDistanceEnabled: 0,
+            rainMode: "NONE",
+            thirdPartyAddress: false,
+            thirdPartyVendor: "",
+            adTrackingID: "cid=7304645~p=1~eid=00000189-11a1-5cdf-2515-df3d00c8017f~srvts=1688217935071",
+            badges: {
+                imageBased: [],
+                textBased: [],
+                textExtendedBadges: []
             },
-            "lastMileTravelString": "4.8 kms",
-            "hasSurge": false,
-            "aggregatedDiscountInfoV3": {
-                "header": "30% OFF",
-                "subHeader": "UPTO ₹75",
-                "discountTag": "",
-                "headerTypeV2": 0
+            lastMileTravelString: "4.8 kms",
+            hasSurge: false,
+            aggregatedDiscountInfoV3: {
+                header: "30% OFF",
+                subHeader: "UPTO ₹75",
+                discountTag: "",
+                headerTypeV2: 0
             },
-            "sla": {
-                "restaurantId": "576559",
-                "deliveryTime": 37,
-                "minDeliveryTime": 37,
-                "maxDeliveryTime": 37,
-                "lastMileTravel": 4.800000190734863,
-                "lastMileDistance": 0,
-                "serviceability": "SERVICEABLE",
-                "rainMode": "NONE",
-                "longDistance": "NOT_LONG_DISTANCE",
-                "preferentialService": false,
-                "iconType": "EMPTY"
+            sla: {
+                restaurantId: "576559",
+                deliveryTime: 37,
+                minDeliveryTime: 37,
+                maxDeliveryTime: 37,
+                lastMileTravel: 4.800000190734863,
+                lastMileDistance: 0,
+                serviceability: "SERVICEABLE",
+                rainMode: "NONE",
+                longDistance: "NOT_LONG_DISTANCE",
+                preferentialService: false,
+                iconType: "EMPTY"
             },
-            "promoted": true,
-            "avgRating": "4.4",
-            "totalRatings": 100,
-            "new": false
+            promoted: true,
+            avgRating: "4.4",
+            totalRatings: 100,
+            new: false
         },
-        "subtype": "basic"
+        subtype: "basic"
     },
     {
-        "type": "restaurant",
-        "data": {
-            "type": "F",
-            "id": "25486",
-            "name": "MH 12 Pav Bhaji",
-            "uuid": "bd5c545b-4088-4cdc-90d6-12ae59e3b84c",
-            "city": "6",
-            "area": "Rasta Peth",
-            "totalRatingsString": "10000+ ratings",
-            "cloudinaryImageId": "cgf7qsoqsvfwletamxt4",
-            "cuisines": [
+        type: "restaurant",
+        data: {
+            type: "F",
+            id: "25486",
+            name: "MH 12 Pav Bhaji",
+            uuid: "bd5c545b-4088-4cdc-90d6-12ae59e3b84c",
+            city: "6",
+            area: "Rasta Peth",
+            totalRatingsString: "10000+ ratings",
+            cloudinaryImageId: "cgf7qsoqsvfwletamxt4",
+            cuisines: [
                 "Snacks",
                 "Pizzas",
                 "Beverages",
                 "Street Food"
             ],
-            "tags": [],
-            "costForTwo": 25000,
-            "costForTwoString": "₹250 FOR TWO",
-            "deliveryTime": 30,
-            "minDeliveryTime": 30,
-            "maxDeliveryTime": 30,
-            "slaString": "30 MINS",
-            "lastMileTravel": 1.2000000476837158,
-            "slugs": {
-                "restaurant": "mh-12-pav-bhaji-rasta-peth-swargate",
-                "city": "pune"
+            tags: [],
+            costForTwo: 25000,
+            costForTwoString: "₹250 FOR TWO",
+            deliveryTime: 30,
+            minDeliveryTime: 30,
+            maxDeliveryTime: 30,
+            slaString: "30 MINS",
+            lastMileTravel: 1.2000000476837158,
+            slugs: {
+                restaurant: "mh-12-pav-bhaji-rasta-peth-swargate",
+                city: "pune"
             },
-            "cityState": "6",
-            "address": "326, Near Laxmi Sugandhalay, Rasta Peth, Pune",
-            "locality": "",
-            "parentId": 8970,
-            "unserviceable": false,
-            "veg": true,
-            "select": false,
-            "favorite": false,
-            "tradeCampaignHeaders": [],
-            "chain": [],
-            "feeDetails": {
-                "fees": [
+            cityState: "6",
+            address: "326, Near Laxmi Sugandhalay, Rasta Peth, Pune",
+            locality: "",
+            parentId: 8970,
+            unserviceable: false,
+            veg: true,
+            select: false,
+            favorite: false,
+            tradeCampaignHeaders: [],
+            chain: [],
+            feeDetails: {
+                fees: [
                     {
-                        "name": "distance",
-                        "fee": 3000,
-                        "message": ""
+                        name: "distance",
+                        fee: 3000,
+                        message: ""
                     },
                     {
-                        "name": "time",
-                        "fee": 0,
-                        "message": ""
+                        name: "time",
+                        fee: 0,
+                        message: ""
                     },
                     {
-                        "name": "special",
-                        "fee": 0,
-                        "message": ""
+                        name: "special",
+                        fee: 0,
+                        message: ""
                     }
                 ],
-                "totalFees": 3000,
-                "message": "",
-                "title": "Delivery Charge",
-                "amount": "3000",
-                "icon": ""
+                totalFees: 3000,
+                message: "",
+                title: "Delivery Charge",
+                amount: "3000",
+                icon: ""
             },
-            "availability": {
-                "opened": true,
-                "nextOpenMessage": "",
-                "nextCloseMessage": ""
+            availability: {
+                opened: true,
+                nextOpenMessage: "",
+                nextCloseMessage: ""
             },
-            "longDistanceEnabled": 0,
-            "rainMode": "NONE",
-            "thirdPartyAddress": false,
-            "thirdPartyVendor": "",
-            "adTrackingID": "",
-            "badges": {
-                "imageBased": [],
-                "textBased": [],
-                "textExtendedBadges": []
+            longDistanceEnabled: 0,
+            rainMode: "NONE",
+            thirdPartyAddress: false,
+            thirdPartyVendor: "",
+            adTrackingID: "",
+            badges: {
+                imageBased: [],
+                textBased: [],
+                textExtendedBadges: []
             },
-            "lastMileTravelString": "1.2 kms",
-            "hasSurge": false,
-            "aggregatedDiscountInfoV3": {
-                "header": "10% OFF",
-                "subHeader": "UPTO ₹40",
-                "discountTag": "",
-                "headerTypeV2": 0
+            lastMileTravelString: "1.2 kms",
+            hasSurge: false,
+            aggregatedDiscountInfoV3: {
+                header: "10% OFF",
+                subHeader: "UPTO ₹40",
+                discountTag: "",
+                headerTypeV2: 0
             },
-            "sla": {
-                "restaurantId": "25486",
-                "deliveryTime": 30,
-                "minDeliveryTime": 30,
-                "maxDeliveryTime": 30,
-                "lastMileTravel": 1.2000000476837158,
-                "lastMileDistance": 0,
-                "serviceability": "SERVICEABLE",
-                "rainMode": "NONE",
-                "longDistance": "NOT_LONG_DISTANCE",
-                "preferentialService": false,
-                "iconType": "EMPTY"
+            sla: {
+                restaurantId: "25486",
+                deliveryTime: 30,
+                minDeliveryTime: 30,
+                maxDeliveryTime: 30,
+                lastMileTravel: 1.2000000476837158,
+                lastMileDistance: 0,
+                serviceability: "SERVICEABLE",
+                rainMode: "NONE",
+                longDistance: "NOT_LONG_DISTANCE",
+                preferentialService: false,
+                iconType: "EMPTY"
             },
-            "promoted": false,
-            "avgRating": "4.1",
-            "totalRatings": 10000,
-            "new": false
+            promoted: false,
+            avgRating: "4.1",
+            totalRatings: 10000,
+            new: false
         },
-        "subtype": "basic"
+        subtype: "basic"
     },
     {
-        "type": "restaurant",
-        "data": {
-            "type": "F",
-            "id": "25396",
-            "name": "Oven Story Pizza",
-            "uuid": "e80fa0ae-d702-4ac7-adc4-76590e2409ab",
-            "city": "6",
-            "area": "Narayan Peth",
-            "totalRatingsString": "1000+ ratings",
-            "cloudinaryImageId": "ab979bffbd658e74de650a15ca0092a3",
-            "cuisines": [
+        type: "restaurant",
+        data: {
+            type: "F",
+            id: "25396",
+            name: "Oven Story Pizza",
+            uuid: "e80fa0ae-d702-4ac7-adc4-76590e2409ab",
+            city: "6",
+            area: "Narayan Peth",
+            totalRatingsString: "1000+ ratings",
+            cloudinaryImageId: "ab979bffbd658e74de650a15ca0092a3",
+            cuisines: [
                 "Pizzas",
                 "Pastas",
                 "Italian",
                 "Desserts",
                 "Beverages"
             ],
-            "tags": [],
-            "costForTwo": 40000,
-            "costForTwoString": "₹400 FOR TWO",
-            "deliveryTime": 34,
-            "minDeliveryTime": 29,
-            "maxDeliveryTime": 39,
-            "slaString": "29-39 MINS",
-            "lastMileTravel": 0.4000000059604645,
-            "slugs": {
-                "restaurant": "ovenstory-pizza-model-colony-swargate",
-                "city": "pune"
+            tags: [],
+            costForTwo: 40000,
+            costForTwoString: "₹400 FOR TWO",
+            deliveryTime: 34,
+            minDeliveryTime: 29,
+            maxDeliveryTime: 39,
+            slaString: "29-39 MINS",
+            lastMileTravel: 0.4000000059604645,
+            slugs: {
+                restaurant: "ovenstory-pizza-model-colony-swargate",
+                city: "pune"
             },
-            "cityState": "6",
-            "address": "S.no 457, Near V S Waikar & Sons Jewellers, Shaniwar Peth ,Pune 411030",
-            "locality": "Shaniwar Peth",
-            "parentId": 3534,
-            "unserviceable": false,
-            "veg": false,
-            "select": false,
-            "favorite": false,
-            "tradeCampaignHeaders": [],
-            "chain": [],
-            "feeDetails": {
-                "fees": [
+            cityState: "6",
+            address: "S.no 457, Near V S Waikar & Sons Jewellers, Shaniwar Peth ,Pune 411030",
+            locality: "Shaniwar Peth",
+            parentId: 3534,
+            unserviceable: false,
+            veg: false,
+            select: false,
+            favorite: false,
+            tradeCampaignHeaders: [],
+            chain: [],
+            feeDetails: {
+                fees: [
                     {
-                        "name": "distance",
-                        "fee": 3200,
-                        "message": ""
+                        name: "distance",
+                        fee: 3200,
+                        message: ""
                     },
                     {
-                        "name": "time",
-                        "fee": 0,
-                        "message": ""
+                        name: "time",
+                        fee: 0,
+                        message: ""
                     },
                     {
-                        "name": "special",
-                        "fee": 0,
-                        "message": ""
+                        name: "special",
+                        fee: 0,
+                        message: ""
                     }
                 ],
-                "totalFees": 3200,
-                "message": "",
-                "title": "Delivery Charge",
-                "amount": "3200",
-                "icon": ""
+                totalFees: 3200,
+                message: "",
+                title: "Delivery Charge",
+                amount: "3200",
+                icon: ""
             },
-            "availability": {
-                "opened": true,
-                "nextOpenMessage": "",
-                "nextCloseMessage": ""
+            availability: {
+                opened: true,
+                nextOpenMessage: "",
+                nextCloseMessage: ""
             },
-            "longDistanceEnabled": 0,
-            "rainMode": "NONE",
-            "thirdPartyAddress": false,
-            "thirdPartyVendor": "",
-            "adTrackingID": "",
-            "badges": {
-                "imageBased": [],
-                "textBased": [],
-                "textExtendedBadges": []
+            longDistanceEnabled: 0,
+            rainMode: "NONE",
+            thirdPartyAddress: false,
+            thirdPartyVendor: "",
+            adTrackingID: "",
+            badges: {
+                imageBased: [],
+                textBased: [],
+                textExtendedBadges: []
             },
-            "lastMileTravelString": "0.4 kms",
-            "hasSurge": false,
-            "aggregatedDiscountInfoV3": {
-                "header": "40% OFF",
-                "subHeader": "UPTO ₹80",
-                "discountTag": "",
-                "headerTypeV2": 0
+            lastMileTravelString: "0.4 kms",
+            hasSurge: false,
+            aggregatedDiscountInfoV3: {
+                header: "40% OFF",
+                subHeader: "UPTO ₹80",
+                discountTag: "",
+                headerTypeV2: 0
             },
-            "sla": {
-                "restaurantId": "25396",
-                "deliveryTime": 34,
-                "minDeliveryTime": 29,
-                "maxDeliveryTime": 39,
-                "lastMileTravel": 0.4000000059604645,
-                "lastMileDistance": 0,
-                "serviceability": "SERVICEABLE",
-                "rainMode": "NONE",
-                "longDistance": "NOT_LONG_DISTANCE",
-                "preferentialService": false,
-                "iconType": "EMPTY"
+            sla: {
+                restaurantId: "25396",
+                deliveryTime: 34,
+                minDeliveryTime: 29,
+                maxDeliveryTime: 39,
+                lastMileTravel: 0.4000000059604645,
+                lastMileDistance: 0,
+                serviceability: "SERVICEABLE",
+                rainMode: "NONE",
+                longDistance: "NOT_LONG_DISTANCE",
+                preferentialService: false,
+                iconType: "EMPTY"
             },
-            "promoted": false,
-            "avgRating": "4.3",
-            "totalRatings": 1000,
-            "new": false
+            promoted: false,
+            avgRating: "4.3",
+            totalRatings: 1000,
+            new: false
         },
-        "subtype": "basic"
+        subtype: "basic"
     },
     {
-        "type": "restaurant",
-        "data": {
-            "type": "F",
-            "id": "394784",
-            "name": "Theobroma",
-            "uuid": "90436c1e-0284-4602-883e-41fba8a059e9",
-            "city": "6",
-            "area": "Shivajinagar",
-            "totalRatingsString": "1000+ ratings",
-            "cloudinaryImageId": "asd7v64r8hjmbx5nivyh",
-            "cuisines": [
+        type: "restaurant",
+        data: {
+            type: "F",
+            id: "394784",
+            name: "Theobroma",
+            uuid: "90436c1e-0284-4602-883e-41fba8a059e9",
+            city: "6",
+            area: "Shivajinagar",
+            totalRatingsString: "1000+ ratings",
+            cloudinaryImageId: "asd7v64r8hjmbx5nivyh",
+            cuisines: [
                 "Bakery",
                 "Desserts"
             ],
-            "tags": [],
-            "costForTwo": 50000,
-            "costForTwoString": "₹500 FOR TWO",
-            "deliveryTime": 28,
-            "minDeliveryTime": 28,
-            "maxDeliveryTime": 28,
-            "slaString": "28 MINS",
-            "lastMileTravel": 2.299999952316284,
-            "slugs": {
-                "restaurant": "theobroma-shivaji-nagar-shivaji-nagar",
-                "city": "pune"
+            tags: [],
+            costForTwo: 50000,
+            costForTwoString: "₹500 FOR TWO",
+            deliveryTime: 28,
+            minDeliveryTime: 28,
+            maxDeliveryTime: 28,
+            slaString: "28 MINS",
+            lastMileTravel: 2.299999952316284,
+            slugs: {
+                restaurant: "theobroma-shivaji-nagar-shivaji-nagar",
+                city: "pune"
             },
-            "cityState": "6",
-            "address": "H NO. 573/2, SHIVAJI NAGAR, PUNE, Karve Road, Pune PMC, Maharashtra, 411004",
-            "locality": "Karve Road",
-            "parentId": 1040,
-            "unserviceable": false,
-            "veg": false,
-            "select": false,
-            "favorite": false,
-            "tradeCampaignHeaders": [],
-            "ribbon": [
+            cityState: "6",
+            address: "H NO. 573/2, SHIVAJI NAGAR, PUNE, Karve Road, Pune PMC, Maharashtra, 411004",
+            locality: "Karve Road",
+            parentId: 1040,
+            unserviceable: false,
+            veg: false,
+            select: false,
+            favorite: false,
+            tradeCampaignHeaders: [],
+            ribbon: [
                 {
-                    "type": "PROMOTED"
+                    type: "PROMOTED"
                 }
             ],
-            "chain": [],
-            "feeDetails": {
-                "fees": [
+            chain: [],
+            feeDetails: {
+                fees: [
                     {
-                        "name": "distance",
-                        "fee": 3200,
-                        "message": ""
+                        name: "distance",
+                        fee: 3200,
+                        message: ""
                     },
                     {
-                        "name": "time",
-                        "fee": 0,
-                        "message": ""
+                        name: "time",
+                        fee: 0,
+                        message: ""
                     },
                     {
-                        "name": "special",
-                        "fee": 0,
-                        "message": ""
+                        name: "special",
+                        fee: 0,
+                        message: ""
                     }
                 ],
-                "totalFees": 3200,
-                "message": "",
-                "title": "Delivery Charge",
-                "amount": "3200",
-                "icon": ""
+                totalFees: 3200,
+                message: "",
+                title: "Delivery Charge",
+                amount: "3200",
+                icon: ""
             },
-            "availability": {
-                "opened": true,
-                "nextOpenMessage": "",
-                "nextCloseMessage": ""
+            availability: {
+                opened: true,
+                nextOpenMessage: "",
+                nextCloseMessage: ""
             },
-            "longDistanceEnabled": 0,
-            "rainMode": "NONE",
-            "thirdPartyAddress": false,
-            "thirdPartyVendor": "",
-            "adTrackingID": "cid=7262236~p=13~eid=00000189-11a1-5cdf-2515-df4100c80d67~srvts=1688217935071",
-            "badges": {
-                "imageBased": [],
-                "textBased": [],
-                "textExtendedBadges": []
+            longDistanceEnabled: 0,
+            rainMode: "NONE",
+            thirdPartyAddress: false,
+            thirdPartyVendor: "",
+            adTrackingID: "cid=7262236~p=13~eid=00000189-11a1-5cdf-2515-df4100c80d67~srvts=1688217935071",
+            badges: {
+                imageBased: [],
+                textBased: [],
+                textExtendedBadges: []
             },
-            "lastMileTravelString": "2.2 kms",
-            "hasSurge": false,
-            "aggregatedDiscountInfoV3": {
-                "header": "10% OFF",
-                "subHeader": "ABOVE ₹159",
-                "discountTag": "FLAT DEAL",
-                "headerTypeV2": 0
+            lastMileTravelString: "2.2 kms",
+            hasSurge: false,
+            aggregatedDiscountInfoV3: {
+                header: "10% OFF",
+                subHeader: "ABOVE ₹159",
+                discountTag: "FLAT DEAL",
+                headerTypeV2: 0
             },
-            "sla": {
-                "restaurantId": "394784",
-                "deliveryTime": 28,
-                "minDeliveryTime": 28,
-                "maxDeliveryTime": 28,
-                "lastMileTravel": 2.299999952316284,
-                "lastMileDistance": 0,
-                "serviceability": "SERVICEABLE",
-                "rainMode": "NONE",
-                "longDistance": "NOT_LONG_DISTANCE",
-                "preferentialService": false,
-                "iconType": "EMPTY"
+            sla: {
+                restaurantId: "394784",
+                deliveryTime: 28,
+                minDeliveryTime: 28,
+                maxDeliveryTime: 28,
+                lastMileTravel: 2.299999952316284,
+                lastMileDistance: 0,
+                serviceability: "SERVICEABLE",
+                rainMode: "NONE",
+                longDistance: "NOT_LONG_DISTANCE",
+                preferentialService: false,
+                iconType: "EMPTY"
             },
-            "promoted": true,
-            "avgRating": "4.5",
-            "totalRatings": 1000,
-            "new": false
+            promoted: true,
+            avgRating: "4.5",
+            totalRatings: 1000,
+            new: false
         },
-        "subtype": "basic"
+        subtype: "basic"
     },
     {
-        "type": "restaurant",
-        "data": {
-            "type": "F",
-            "id": "18808",
-            "name": "Faasos - Wraps & Rolls",
-            "uuid": "e4e6312a-96fd-4e7c-b924-e109cf7df89a",
-            "city": "6",
-            "area": "Shaniwar Peth",
-            "totalRatingsString": "10000+ ratings",
-            "cloudinaryImageId": "af33b81798b11deba338e94b7585d348",
-            "cuisines": [
+        type: "restaurant",
+        data: {
+            type: "F",
+            id: "18808",
+            name: "Faasos - Wraps & Rolls",
+            uuid: "e4e6312a-96fd-4e7c-b924-e109cf7df89a",
+            city: "6",
+            area: "Shaniwar Peth",
+            totalRatingsString: "10000+ ratings",
+            cloudinaryImageId: "af33b81798b11deba338e94b7585d348",
+            cuisines: [
                 "Kebabs",
                 "Fast Food",
                 "Snacks",
@@ -33957,204 +33974,204 @@ const restaurantList = [
                 "Desserts",
                 "Beverages"
             ],
-            "tags": [],
-            "costForTwo": 20000,
-            "costForTwoString": "₹200 FOR TWO",
-            "deliveryTime": 26,
-            "minDeliveryTime": 26,
-            "maxDeliveryTime": 26,
-            "slaString": "26 MINS",
-            "lastMileTravel": 0.4000000059604645,
-            "slugs": {
-                "restaurant": "fassos-subhamangal-housing-society-shivaji-nagar",
-                "city": "pune"
+            tags: [],
+            costForTwo: 20000,
+            costForTwoString: "₹200 FOR TWO",
+            deliveryTime: 26,
+            minDeliveryTime: 26,
+            maxDeliveryTime: 26,
+            slaString: "26 MINS",
+            lastMileTravel: 0.4000000059604645,
+            slugs: {
+                restaurant: "fassos-subhamangal-housing-society-shivaji-nagar",
+                city: "pune"
             },
-            "cityState": "6",
-            "address": "S.no 457 shaniwar peth ,Pune 411030",
-            "locality": "Shaniwar Peth FC",
-            "parentId": 21809,
-            "unserviceable": false,
-            "veg": false,
-            "select": false,
-            "favorite": false,
-            "tradeCampaignHeaders": [],
-            "chain": [],
-            "feeDetails": {
-                "fees": [
+            cityState: "6",
+            address: "S.no 457 shaniwar peth ,Pune 411030",
+            locality: "Shaniwar Peth FC",
+            parentId: 21809,
+            unserviceable: false,
+            veg: false,
+            select: false,
+            favorite: false,
+            tradeCampaignHeaders: [],
+            chain: [],
+            feeDetails: {
+                fees: [
                     {
-                        "name": "distance",
-                        "fee": 3200,
-                        "message": ""
+                        name: "distance",
+                        fee: 3200,
+                        message: ""
                     },
                     {
-                        "name": "time",
-                        "fee": 0,
-                        "message": ""
+                        name: "time",
+                        fee: 0,
+                        message: ""
                     },
                     {
-                        "name": "special",
-                        "fee": 0,
-                        "message": ""
+                        name: "special",
+                        fee: 0,
+                        message: ""
                     }
                 ],
-                "totalFees": 3200,
-                "message": "",
-                "title": "Delivery Charge",
-                "amount": "3200",
-                "icon": ""
+                totalFees: 3200,
+                message: "",
+                title: "Delivery Charge",
+                amount: "3200",
+                icon: ""
             },
-            "availability": {
-                "opened": true,
-                "nextOpenMessage": "",
-                "nextCloseMessage": ""
+            availability: {
+                opened: true,
+                nextOpenMessage: "",
+                nextCloseMessage: ""
             },
-            "longDistanceEnabled": 0,
-            "rainMode": "NONE",
-            "thirdPartyAddress": false,
-            "thirdPartyVendor": "",
-            "adTrackingID": "",
-            "badges": {
-                "imageBased": [],
-                "textBased": [],
-                "textExtendedBadges": []
+            longDistanceEnabled: 0,
+            rainMode: "NONE",
+            thirdPartyAddress: false,
+            thirdPartyVendor: "",
+            adTrackingID: "",
+            badges: {
+                imageBased: [],
+                textBased: [],
+                textExtendedBadges: []
             },
-            "lastMileTravelString": "0.4 kms",
-            "hasSurge": false,
-            "aggregatedDiscountInfoV3": {
-                "header": "50% OFF",
-                "subHeader": "UPTO ₹100",
-                "discountTag": "",
-                "headerTypeV2": 0
+            lastMileTravelString: "0.4 kms",
+            hasSurge: false,
+            aggregatedDiscountInfoV3: {
+                header: "50% OFF",
+                subHeader: "UPTO ₹100",
+                discountTag: "",
+                headerTypeV2: 0
             },
-            "sla": {
-                "restaurantId": "18808",
-                "deliveryTime": 26,
-                "minDeliveryTime": 26,
-                "maxDeliveryTime": 26,
-                "lastMileTravel": 0.4000000059604645,
-                "lastMileDistance": 0,
-                "serviceability": "SERVICEABLE",
-                "rainMode": "NONE",
-                "longDistance": "NOT_LONG_DISTANCE",
-                "preferentialService": false,
-                "iconType": "EMPTY"
+            sla: {
+                restaurantId: "18808",
+                deliveryTime: 26,
+                minDeliveryTime: 26,
+                maxDeliveryTime: 26,
+                lastMileTravel: 0.4000000059604645,
+                lastMileDistance: 0,
+                serviceability: "SERVICEABLE",
+                rainMode: "NONE",
+                longDistance: "NOT_LONG_DISTANCE",
+                preferentialService: false,
+                iconType: "EMPTY"
             },
-            "promoted": false,
-            "avgRating": "4.3",
-            "totalRatings": 10000,
-            "new": false
+            promoted: false,
+            avgRating: "4.3",
+            totalRatings: 10000,
+            new: false
         },
-        "subtype": "basic"
+        subtype: "basic"
     },
     {
-        "type": "restaurant",
-        "data": {
-            "type": "F",
-            "id": "491702",
-            "name": "Naadbramha Idli",
-            "uuid": "cb7035f8-ee39-4707-8e8a-1ac65c32af1d",
-            "city": "6",
-            "area": "Swargate",
-            "totalRatingsString": "50+ ratings",
-            "cloudinaryImageId": "ydrbvdsobyfzyapbkdmj",
-            "cuisines": [
+        type: "restaurant",
+        data: {
+            type: "F",
+            id: "491702",
+            name: "Naadbramha Idli",
+            uuid: "cb7035f8-ee39-4707-8e8a-1ac65c32af1d",
+            city: "6",
+            area: "Swargate",
+            totalRatingsString: "50+ ratings",
+            cloudinaryImageId: "ydrbvdsobyfzyapbkdmj",
+            cuisines: [
                 "South Indian"
             ],
-            "tags": [],
-            "costForTwo": 10000,
-            "costForTwoString": "₹100 FOR TWO",
-            "deliveryTime": 25,
-            "minDeliveryTime": 25,
-            "maxDeliveryTime": 25,
-            "slaString": "25 MINS",
-            "lastMileTravel": 0.30000001192092896,
-            "slugs": {
-                "restaurant": "naadbramha-idli-swargate-swargate",
-                "city": "pune"
+            tags: [],
+            costForTwo: 10000,
+            costForTwoString: "₹100 FOR TWO",
+            deliveryTime: 25,
+            minDeliveryTime: 25,
+            maxDeliveryTime: 25,
+            slaString: "25 MINS",
+            lastMileTravel: 0.30000001192092896,
+            slugs: {
+                restaurant: "naadbramha-idli-swargate-swargate",
+                city: "pune"
             },
-            "cityState": "6",
-            "address": "Shop No.3 ,Ground floor H.No.184 A/MP 2, Shivaji road,Kasba peth,pune-411011",
-            "locality": "Rasta Peth",
-            "parentId": 251339,
-            "unserviceable": false,
-            "veg": false,
-            "select": false,
-            "favorite": false,
-            "tradeCampaignHeaders": [],
-            "chain": [],
-            "feeDetails": {
-                "fees": [
+            cityState: "6",
+            address: "Shop No.3 ,Ground floor H.No.184 A/MP 2, Shivaji road,Kasba peth,pune-411011",
+            locality: "Rasta Peth",
+            parentId: 251339,
+            unserviceable: false,
+            veg: false,
+            select: false,
+            favorite: false,
+            tradeCampaignHeaders: [],
+            chain: [],
+            feeDetails: {
+                fees: [
                     {
-                        "name": "distance",
-                        "fee": 3000,
-                        "message": ""
+                        name: "distance",
+                        fee: 3000,
+                        message: ""
                     },
                     {
-                        "name": "time",
-                        "fee": 0,
-                        "message": ""
+                        name: "time",
+                        fee: 0,
+                        message: ""
                     },
                     {
-                        "name": "special",
-                        "fee": 0,
-                        "message": ""
+                        name: "special",
+                        fee: 0,
+                        message: ""
                     }
                 ],
-                "totalFees": 3000,
-                "message": "",
-                "title": "Delivery Charge",
-                "amount": "3000",
-                "icon": ""
+                totalFees: 3000,
+                message: "",
+                title: "Delivery Charge",
+                amount: "3000",
+                icon: ""
             },
-            "availability": {
-                "opened": true,
-                "nextOpenMessage": "",
-                "nextCloseMessage": "Closes soon"
+            availability: {
+                opened: true,
+                nextOpenMessage: "",
+                nextCloseMessage: "Closes soon"
             },
-            "longDistanceEnabled": 0,
-            "rainMode": "NONE",
-            "thirdPartyAddress": false,
-            "thirdPartyVendor": "",
-            "adTrackingID": "",
-            "badges": {
-                "imageBased": [],
-                "textBased": [],
-                "textExtendedBadges": []
+            longDistanceEnabled: 0,
+            rainMode: "NONE",
+            thirdPartyAddress: false,
+            thirdPartyVendor: "",
+            adTrackingID: "",
+            badges: {
+                imageBased: [],
+                textBased: [],
+                textExtendedBadges: []
             },
-            "lastMileTravelString": "0.3 kms",
-            "hasSurge": false,
-            "sla": {
-                "restaurantId": "491702",
-                "deliveryTime": 25,
-                "minDeliveryTime": 25,
-                "maxDeliveryTime": 25,
-                "lastMileTravel": 0.30000001192092896,
-                "lastMileDistance": 0,
-                "serviceability": "SERVICEABLE",
-                "rainMode": "NONE",
-                "longDistance": "NOT_LONG_DISTANCE",
-                "preferentialService": false,
-                "iconType": "EMPTY"
+            lastMileTravelString: "0.3 kms",
+            hasSurge: false,
+            sla: {
+                restaurantId: "491702",
+                deliveryTime: 25,
+                minDeliveryTime: 25,
+                maxDeliveryTime: 25,
+                lastMileTravel: 0.30000001192092896,
+                lastMileDistance: 0,
+                serviceability: "SERVICEABLE",
+                rainMode: "NONE",
+                longDistance: "NOT_LONG_DISTANCE",
+                preferentialService: false,
+                iconType: "EMPTY"
             },
-            "promoted": false,
-            "avgRating": "4.6",
-            "totalRatings": 50,
-            "new": false
+            promoted: false,
+            avgRating: "4.6",
+            totalRatings: 50,
+            new: false
         },
-        "subtype": "basic"
+        subtype: "basic"
     },
     {
-        "type": "restaurant",
-        "data": {
-            "type": "F",
-            "id": "62934",
-            "name": "LunchBox - Meals and Thalis",
-            "uuid": "adc8ae31-eff6-406f-b5ab-541eb74f4e3d",
-            "city": "6",
-            "area": "Narayan Peth",
-            "totalRatingsString": "5000+ ratings",
-            "cloudinaryImageId": "chs0jbyj2osyqumr1wiu",
-            "cuisines": [
+        type: "restaurant",
+        data: {
+            type: "F",
+            id: "62934",
+            name: "LunchBox - Meals and Thalis",
+            uuid: "adc8ae31-eff6-406f-b5ab-541eb74f4e3d",
+            city: "6",
+            area: "Narayan Peth",
+            totalRatingsString: "5000+ ratings",
+            cloudinaryImageId: "chs0jbyj2osyqumr1wiu",
+            cuisines: [
                 "Biryani",
                 "North Indian",
                 "Punjabi",
@@ -34162,94 +34179,94 @@ const restaurantList = [
                 "Desserts",
                 "Beverages"
             ],
-            "tags": [],
-            "costForTwo": 20000,
-            "costForTwoString": "₹200 FOR TWO",
-            "deliveryTime": 31,
-            "minDeliveryTime": 31,
-            "maxDeliveryTime": 31,
-            "slaString": "31 MINS",
-            "lastMileTravel": 0.4000000059604645,
-            "slugs": {
-                "restaurant": "lunchbox-shaniwar-peth-swargate",
-                "city": "pune"
+            tags: [],
+            costForTwo: 20000,
+            costForTwoString: "₹200 FOR TWO",
+            deliveryTime: 31,
+            minDeliveryTime: 31,
+            maxDeliveryTime: 31,
+            slaString: "31 MINS",
+            lastMileTravel: 0.4000000059604645,
+            slugs: {
+                restaurant: "lunchbox-shaniwar-peth-swargate",
+                city: "pune"
             },
-            "cityState": "6",
-            "address": "S.no 457 shaniwar peth ,Pune 411030",
-            "locality": "Shaniwar Peth",
-            "parentId": 4925,
-            "unserviceable": false,
-            "veg": false,
-            "select": false,
-            "favorite": false,
-            "tradeCampaignHeaders": [],
-            "chain": [],
-            "feeDetails": {
-                "fees": [
+            cityState: "6",
+            address: "S.no 457 shaniwar peth ,Pune 411030",
+            locality: "Shaniwar Peth",
+            parentId: 4925,
+            unserviceable: false,
+            veg: false,
+            select: false,
+            favorite: false,
+            tradeCampaignHeaders: [],
+            chain: [],
+            feeDetails: {
+                fees: [
                     {
-                        "name": "distance",
-                        "fee": 3200,
-                        "message": ""
+                        name: "distance",
+                        fee: 3200,
+                        message: ""
                     },
                     {
-                        "name": "time",
-                        "fee": 0,
-                        "message": ""
+                        name: "time",
+                        fee: 0,
+                        message: ""
                     },
                     {
-                        "name": "special",
-                        "fee": 0,
-                        "message": ""
+                        name: "special",
+                        fee: 0,
+                        message: ""
                     }
                 ],
-                "totalFees": 3200,
-                "message": "",
-                "title": "Delivery Charge",
-                "amount": "3200",
-                "icon": ""
+                totalFees: 3200,
+                message: "",
+                title: "Delivery Charge",
+                amount: "3200",
+                icon: ""
             },
-            "availability": {
-                "opened": true,
-                "nextOpenMessage": "",
-                "nextCloseMessage": ""
+            availability: {
+                opened: true,
+                nextOpenMessage: "",
+                nextCloseMessage: ""
             },
-            "longDistanceEnabled": 0,
-            "rainMode": "NONE",
-            "thirdPartyAddress": false,
-            "thirdPartyVendor": "",
-            "adTrackingID": "",
-            "badges": {
-                "imageBased": [],
-                "textBased": [],
-                "textExtendedBadges": []
+            longDistanceEnabled: 0,
+            rainMode: "NONE",
+            thirdPartyAddress: false,
+            thirdPartyVendor: "",
+            adTrackingID: "",
+            badges: {
+                imageBased: [],
+                textBased: [],
+                textExtendedBadges: []
             },
-            "lastMileTravelString": "0.4 kms",
-            "hasSurge": false,
-            "aggregatedDiscountInfoV3": {
-                "header": "₹125 OFF",
-                "subHeader": "ABOVE ₹299",
-                "discountTag": "FLAT DEAL",
-                "headerTypeV2": 0
+            lastMileTravelString: "0.4 kms",
+            hasSurge: false,
+            aggregatedDiscountInfoV3: {
+                header: "₹125 OFF",
+                subHeader: "ABOVE ₹299",
+                discountTag: "FLAT DEAL",
+                headerTypeV2: 0
             },
-            "sla": {
-                "restaurantId": "62934",
-                "deliveryTime": 31,
-                "minDeliveryTime": 31,
-                "maxDeliveryTime": 31,
-                "lastMileTravel": 0.4000000059604645,
-                "lastMileDistance": 0,
-                "serviceability": "SERVICEABLE",
-                "rainMode": "NONE",
-                "longDistance": "NOT_LONG_DISTANCE",
-                "preferentialService": false,
-                "iconType": "EMPTY"
+            sla: {
+                restaurantId: "62934",
+                deliveryTime: 31,
+                minDeliveryTime: 31,
+                maxDeliveryTime: 31,
+                lastMileTravel: 0.4000000059604645,
+                lastMileDistance: 0,
+                serviceability: "SERVICEABLE",
+                rainMode: "NONE",
+                longDistance: "NOT_LONG_DISTANCE",
+                preferentialService: false,
+                iconType: "EMPTY"
             },
-            "promoted": false,
-            "avgRating": "4.0",
-            "totalRatings": 5000,
-            "new": false
+            promoted: false,
+            avgRating: "4.0",
+            totalRatings: 5000,
+            new: false
         },
-        "subtype": "basic"
+        subtype: "basic"
     }
 ];
 
@@ -34266,40 +34283,40 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 const ShimmerUi = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            class: "container",
+            className: "container",
             children: Array(10).fill("").map((e, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    class: "shimmer-card",
+                    className: "shimmer-card",
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            class: "img-block"
+                            className: "img-block"
                         }, void 0, false, {
                             fileName: "src/components/ShimmerUI.js",
                             lineNumber: 5,
                             columnNumber: 15
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            class: "line"
+                            className: "line"
                         }, void 0, false, {
                             fileName: "src/components/ShimmerUI.js",
                             lineNumber: 6,
                             columnNumber: 15
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            class: "line"
+                            className: "line"
                         }, void 0, false, {
                             fileName: "src/components/ShimmerUI.js",
                             lineNumber: 7,
                             columnNumber: 15
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            class: "line"
+                            className: "line"
                         }, void 0, false, {
                             fileName: "src/components/ShimmerUI.js",
                             lineNumber: 8,
                             columnNumber: 15
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            class: "shimmer"
+                            className: "shimmer"
                         }, void 0, false, {
                             fileName: "src/components/ShimmerUI.js",
                             lineNumber: 9,
@@ -34338,13 +34355,22 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const Footer = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-        children: "Footer"
+const Footer = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "footer",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+            children: "Footer"
+        }, void 0, false, {
+            fileName: "src/components/Footer.js",
+            lineNumber: 3,
+            columnNumber: 7
+        }, undefined)
     }, void 0, false, {
         fileName: "src/components/Footer.js",
-        lineNumber: 1,
-        columnNumber: 22
+        lineNumber: 2,
+        columnNumber: 10
     }, undefined);
+};
 _c = Footer;
 exports.default = Footer;
 var _c;
@@ -34473,6 +34499,152 @@ $RefreshReg$(_c, "Contact");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["hklly","1xC6H","bNKaB"], "bNKaB", "parcelRequire164e")
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"8PuJ6":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$40d6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$40d6.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactRouterDom = require("react-router-dom");
+var _shimmerUI = require("./ShimmerUI");
+var _shimmerUIDefault = parcelHelpers.interopDefault(_shimmerUI);
+var _constant = require("../constant");
+var _s = $RefreshSig$();
+const RestaurantMenu = ()=>{
+    _s();
+    const { id  } = (0, _reactRouterDom.useParams)();
+    const [restaurant, setRestaurant] = (0, _react.useState)(null);
+    (0, _react.useEffect)(()=>{
+        getRestaurantInfo();
+    }, []);
+    async function getRestaurantInfo() {
+        const data = await fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=23.2599333&lng=77.412615&restaurantId=" + id);
+        const json = await data.json();
+        setRestaurant(json.data);
+    }
+    return !restaurant ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerUIDefault.default), {}, void 0, false, {
+        fileName: "src/components/RestaurantMenu.js",
+        lineNumber: 18,
+        columnNumber: 24
+    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "menu",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                        children: [
+                            "Restaurant id: ",
+                            id
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/RestaurantMenu.js",
+                        lineNumber: 20,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                        children: [
+                            " ",
+                            restaurant?.cards[0]?.card?.card?.info?.name,
+                            " "
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/RestaurantMenu.js",
+                        lineNumber: 21,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                        src: (0, _constant.IMG_CON_URL) + restaurant?.cards[0]?.card?.card?.info?.cloudinaryImageId
+                    }, void 0, false, {
+                        fileName: "src/components/RestaurantMenu.js",
+                        lineNumber: 22,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                        children: restaurant?.cards[0]?.card?.card?.info?.cuisines.join(", ")
+                    }, void 0, false, {
+                        fileName: "src/components/RestaurantMenu.js",
+                        lineNumber: 23,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                        children: [
+                            " ",
+                            restaurant?.cards[0]?.card?.card?.info?.areaName + ", " + restaurant?.cards[0]?.card?.card?.info?.city,
+                            " "
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/RestaurantMenu.js",
+                        lineNumber: 24,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                        children: restaurant?.cards[0]?.card?.card?.info?.costForTwoMessage
+                    }, void 0, false, {
+                        fileName: "src/components/RestaurantMenu.js",
+                        lineNumber: 28,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/RestaurantMenu.js",
+                lineNumber: 19,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                        children: "Menu"
+                    }, void 0, false, {
+                        fileName: "src/components/RestaurantMenu.js",
+                        lineNumber: 32,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                        children: restaurant?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.map((x)=>x.card?.card)?.filter((x)=>x["@type"] == (0, _constant.MENU_ITEM_TYPE))?.map((x)=>x.itemCards).flat().map((item)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                children: item.card.info.name
+                            }, item.card.info.id, false, {
+                                fileName: "src/components/RestaurantMenu.js",
+                                lineNumber: 34,
+                                columnNumber: 185
+                            }, undefined))
+                    }, void 0, false, {
+                        fileName: "src/components/RestaurantMenu.js",
+                        lineNumber: 33,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/RestaurantMenu.js",
+                lineNumber: 31,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/RestaurantMenu.js",
+        lineNumber: 18,
+        columnNumber: 40
+    }, undefined);
+};
+_s(RestaurantMenu, "qzeWROWGkJck+OoQ8Lt8bAtaxCM=", false, function() {
+    return [
+        (0, _reactRouterDom.useParams)
+    ];
+});
+_c = RestaurantMenu;
+exports.default = RestaurantMenu;
+var _c;
+$RefreshReg$(_c, "RestaurantMenu");
+
+  $parcel$ReactRefreshHelpers$40d6.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq","react-router-dom":"9xmpe","./ShimmerUI":"7lsvJ","../constant":"jVIFP"}]},["hklly","1xC6H","bNKaB"], "bNKaB", "parcelRequire164e")
 
 //# sourceMappingURL=index.0641b553.js.map

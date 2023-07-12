@@ -1,16 +1,16 @@
 const ShimmerUi = () => {
   return (
     <>
-      <div class="container">
+      <div className="container">
         {Array(10)
           .fill("")
           .map((e, index) => (
-            <div key={index} class="shimmer-card">
-              <div class="img-block"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="shimmer"></div>
+            <div key={index} className="shimmer-card">
+              <div className="img-block"></div>
+              <div className="line"></div>
+              <div className="line"></div>
+              <div className="line"></div>
+              <div className="shimmer"></div>
             </div>
           ))}
       </div>

@@ -4,6 +4,10 @@ body {
   font-family: Inter, sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
 .header {
   color: #fff;
   background-color: #212121;
@@ -20,6 +24,10 @@ body {
 .nav-items > ul > li {
   padding: 1rem;
   font-family: Roboto, sans-serif;
+}
+
+.nav-items > ul > li > a {
+  color: #fff;
 }
 
 .logo {
@@ -61,7 +69,16 @@ body {
   font-size: .9rem;
 }
 
-.restaurant-list, .container {
+.restaurant-list {
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.restaurant-list > a {
+  color: #212121;
+}
+
+.container {
   flex-wrap: wrap;
   display: flex;
 }
@@ -110,6 +127,10 @@ body {
   to {
     transform: translateX(200%);
   }
+}
+
+.menu {
+  display: flex;
 }
 
 /*# sourceMappingURL=index.1303bb05.css.map */

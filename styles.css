@@ -3,6 +3,9 @@ body {
   padding: 0;
   font-family: "Inter", sans-serif;
 }
+a {
+  text-decoration: none;
+}
 .header {
   display: flex;
   justify-content: space-between;
@@ -17,6 +20,9 @@ body {
 .nav-items > ul > li {
   padding: 1rem;
   font-family: "Roboto", sans-serif;
+}
+.nav-items > ul > li > a {
+  color: white;
 }
 .logo {
   width: 5rem;
@@ -52,6 +58,9 @@ body {
 .restaurant-list {
   display: flex;
   flex-wrap: wrap;
+}
+.restaurant-list > a {
+  color: #212121;
 }
 
 /* SHIMMER CARD CSS */
@@ -108,4 +117,8 @@ body {
   to {
     transform: translateX(200%);
   }
+}
+
+.menu {
+  display: flex;
 }

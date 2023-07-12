@@ -43,6 +43,7 @@ body {
 
 .card {
   border: 1px solid #000;
+  border-radius: .5rem;
   width: 14rem;
   margin: 1.4rem;
   padding: 1rem;

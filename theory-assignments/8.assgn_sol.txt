@@ -14,6 +14,7 @@ A- Monolithic applications typically consist of a client-side UI, a database, an
 ● - Why do we need a useEffect Hook?
 A- The useEffect Hook allows you to perform side effects in your components. Some examples of side effects are: fetching data, directly updating the DOM, and timers.
 - it takes two arguments, (1) Call back function (2) dependency array
+- it is called after the componentis rendered
 - eg: useEffect(() => {
     //Api call
     getRestaurant();

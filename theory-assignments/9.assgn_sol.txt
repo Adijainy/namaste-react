@@ -1,0 +1,28 @@
+● - What are various ways to add images into our App? Explain with code examples
+A- Either store images (1) locally (2) use CDN link
+- (1) create src --> assets --> images --> img.jpg
+    - import logo from "../assests/images/img.jpg";
+    - <img src = {logo} />
+
+- (2) CDN link
+    - <img
+        className="logo"
+        src="https://s3.amazonaws.com/thumbnails.venngage.com/template/9f596769-790d-4b5f-bb80-668016a9c920.png"
+        alt="logo"
+      />
+
+● - What would happen if we do console.log(useState())?
+A- it returns an array with 1st element undefined and 2nd element a function.
+
+● - How will useEffect behave if we don't add a dependency array ?
+A- It will keep running after every render and after any update in the UI.
+
+● - What is SPA?
+A- A Single Page Application (SPA) is a website or web application that dynamically rewrites an existing web page with new information from the web server. In a React application, components retrieve site content and render it to a single HTML file in your project.
+
+● - What is difference between Client Side Routing and Server Side Routing?
+A- In the server-side routing, when we exchange data, we send requests and response.
+- A server-side request causes the whole page to refresh. This is because a new GET request is sent to the server which responds with a new document, completely discarding the old page altogether.
+
+- in the client-side case, we are not doing that. We are reading the URL, and we are re-rendering the page.
+- When a user clicks on a link, the URL changes but the request to the server is prevented. The adjustment to the URL will result in a changed state of the application.

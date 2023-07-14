@@ -52,9 +52,10 @@ const RestaurantMenu = () => {
             ?.filter((x) => x["@type"] == MENU_ITEM_TYPE)
             ?.map((x) => x.itemCards)
             .flat()
-            .map((item) => (
-              <li key={item.card.info.id}>{item.card.info.name}</li>
+            .map((item, index) => (
+              <li key={index}>{item.card.info.name}</li>
             ))}
+          {/* //replace index by {item.card.info.name} after removing the duplicates in it as the array contains duplicate items */}
         </ul>
       </div>
     </div>

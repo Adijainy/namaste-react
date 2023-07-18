@@ -10,7 +10,7 @@ export const Title = () => {
   return (
     <a href="/">
       <img
-        className="logo"
+        className="w-20 px-2"
         src="https://s3.amazonaws.com/thumbnails.venngage.com/template/9f596769-790d-4b5f-bb80-668016a9c920.png"
         alt="logo"
       />
@@ -22,23 +22,23 @@ const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const isOnline = useOnline();
   return (
-    <div className="header">
+    <div className="flex justify-between bg-[#212121] text-white shadow-lg px-24">
       <Title />
       <div className="nav-items">
-        <ul>
-          <li>
+        <ul className="flex py-6">
+          <li className="px-2">
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li className="px-2">
             <Link to="/about">About</Link>
           </li>
-          <li>
+          <li className="px-2">
             <Link to="/contact">Contact</Link>
           </li>
-          <li>
+          <li className="px-2">
             <i className="fa-solid fa-cart-arrow-down"></i> Cart
           </li>
-          <li> {isOnline ? "🟢" : "🔴"} </li>
+          <li className="px-2"> {isOnline ? "🟢" : "🔴"} </li>
         </ul>
       </div>
       {isLoggedIn ? (

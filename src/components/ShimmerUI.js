@@ -1,16 +1,15 @@
 const ShimmerUi = () => {
   return (
     <>
-      <div className="container">
+      <div className="flex flex-wrap px-30 ml-20">
         {Array(10)
           .fill("")
           .map((e, index) => (
-            <div key={index} className="shimmer-card">
-              <div className="img-block"></div>
-              <div className="line"></div>
-              <div className="line"></div>
-              <div className="line"></div>
-              <div className="shimmer"></div>
+            <div key={index} className="w-64 p-5 m-2 bg-white">
+              <div className=" h-32 bg-[#dddada] m-5 rounded-md"></div>
+              <div className="h-2 my-5 bg-[#dddada] "></div>
+              <div className="h-2 my-5 bg-[#dddada]"></div>
+              <div className="h-2 my-5 bg-[#dddada]"></div>
             </div>
           ))}
       </div>

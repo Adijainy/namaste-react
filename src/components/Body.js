@@ -38,10 +38,10 @@ const Body = () => {
     <ShimmerUi />
   ) : (
     <>
-      <div className="search-container">
+      <div className="flex justify-center search-container py-1 mt-2 text-sm ">
         <input
           type="text"
-          className="search-input"
+          className="border-solid border-[0.05rem] border-black p-2"
           placeholder="Search"
           value={searchText}
           onChange={(e) => {
@@ -49,7 +49,7 @@ const Body = () => {
           }}
         />
         <button
-          className="search-button"
+          className="px-2 py-1 bg-[#212121] text-white rounded-r-md hover:bg-zinc-700"
           onClick={() => {
             //filterdata
             const data = filterData(searchText, allRestaurants);
@@ -61,7 +61,7 @@ const Body = () => {
         </button>
       </div>
 
-      <div className="restaurant-list">
+      <div className="flex flex-wrap px-30 ml-20 ">
         {filteredRestaurants.map((restaurant) => {
           return (
             <Link

@@ -38,6 +38,9 @@ const Header = () => {
           <li className="px-2">
             <i className="fa-solid fa-cart-arrow-down"></i> Cart
           </li>
+          <li className="px-2">
+            <Link to="/instamart">Instamart</Link>
+          </li>
           <li className="px-2"> {isOnline ? "🟢" : "🔴"} </li>
         </ul>
       </div>

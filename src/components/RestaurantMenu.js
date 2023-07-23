@@ -13,7 +13,7 @@ const RestaurantMenu = () => {
   return !restaurant ? (
     <ShimmerUi />
   ) : (
-    <div className="menu">
+    <div className="flex">
       <div>
         <h1>Restaurant id: {id}</h1>
         <h2> {menuInfo?.name} </h2>
@@ -24,7 +24,7 @@ const RestaurantMenu = () => {
       </div>
 
       <div>
-        <h1>Menu</h1>
+        <h1 className="text-xl">Menu</h1>
         <ul>
           {restaurant?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards
             ?.map((x) => x.card?.card)

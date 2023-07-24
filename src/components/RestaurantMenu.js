@@ -3,12 +3,20 @@ import { useParams } from "react-router-dom";
 import ShimmerUi from "./ShimmerUI";
 import { IMG_CON_URL, MENU_ITEM_TYPE } from "../constant";
 import useRestaurant from "../utils/useRestaurant";
+import { addItem } from "../utils/cartSlice";
+import { useDispatch } from "react-redux";
 
 const RestaurantMenu = () => {
   const { id } = useParams();
 
   const restaurant = useRestaurant(id);
   const menuInfo = restaurant?.cards[0]?.card?.card?.info;
+
+  const dispatch = useDispatch();
+
+  const addFoodItem = (item) => {
+    dispatch(addItem(item));
+  };
 
   return !restaurant ? (
     <ShimmerUi />
@@ -22,8 +30,8 @@ const RestaurantMenu = () => {
         <h3> {menuInfo?.areaName + ", " + menuInfo?.city} </h3>
         <h4>{menuInfo?.costForTwoMessage}</h4>
       </div>
-
-      <div>
+      <div></div>
+      <div className="p-5">
         <h1 className="text-xl">Menu</h1>
         <ul>
           {restaurant?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards
@@ -32,7 +40,15 @@ const RestaurantMenu = () => {
             ?.map((x) => x.itemCards)
             .flat()
             .map((item, index) => (
-              <li key={index}>{item.card.info.name}</li>
+              <li key={index}>
+                {item.card.info.name} -{" "}
+                <button
+                  className="p-1 bg-green-100"
+                  onClick={() => addFoodItem(item.card.info)}
+                >
+                  Add
+                </button>{" "}
+              </li>
             ))}
           {/* //replace index by {item.card.info.name} after removing the duplicates in it as the array contains duplicate items */}
         </ul>

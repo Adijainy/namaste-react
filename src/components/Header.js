@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
 
@@ -21,6 +22,10 @@ export const Title = () => {
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const isOnline = useOnline();
+
+  const cartItems = useSelector((store) => store.cart.items);
+  console.log(cartItems);
+
   return (
     <div className="flex justify-between bg-[#212121] text-white shadow-lg px-24">
       <Title />
@@ -36,10 +41,13 @@ const Header = () => {
             <Link to="/contact">Contact</Link>
           </li>
           <li className="px-2">
-            <i className="fa-solid fa-cart-arrow-down"></i> Cart
+            <Link to="/instamart">Instamart</Link>
           </li>
           <li className="px-2">
-            <Link to="/instamart">Instamart</Link>
+            <Link to="/cart">
+              <i className="fa-solid fa-cart-arrow-down"></i> Cart-
+              {cartItems.length}
+            </Link>
           </li>
           <li className="px-2"> {isOnline ? "🟢" : "🔴"} </li>
         </ul>

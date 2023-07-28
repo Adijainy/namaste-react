@@ -5,7 +5,7 @@ const RestaurauntCard = ({
   cuisines,
   avgRating,
   deliveryTime,
-  costForTwoString,
+  costForTwo,
 }) => (
   <div className="w-64 p-5 m-2 border-solid border-[0.05rem] border-white hover:border-zinc-600 ">
     <img src={IMG_CON_URL + cloudinaryImageId} alt="" />
@@ -25,7 +25,7 @@ const RestaurauntCard = ({
         <i className="fa-solid fa-star"></i> {avgRating}
       </h4>
       <h4 className="px-2 py-1 ml-2">{deliveryTime} MINS</h4>
-      <h4 className="px-2 py-1">{costForTwoString}</h4>
+      <h4 className="px-2 py-1">{costForTwo.toUpperCase()}</h4>
     </div>
   </div>
 );

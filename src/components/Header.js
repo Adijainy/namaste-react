@@ -11,6 +11,7 @@ export const Title = () => {
   return (
     <a href="/">
       <img
+        data-testid="logo"
         className="w-20 px-2"
         src="https://s3.amazonaws.com/thumbnails.venngage.com/template/9f596769-790d-4b5f-bb80-668016a9c920.png"
         alt="logo"
@@ -24,7 +25,7 @@ const Header = () => {
   const isOnline = useOnline();
 
   const cartItems = useSelector((store) => store.cart.items);
-  console.log(cartItems);
+  // console.log(cartItems);
 
   return (
     <div className="flex justify-between bg-[#212121] text-white shadow-lg px-24">
@@ -43,13 +44,15 @@ const Header = () => {
           <li className="px-2">
             <Link to="/instamart">Instamart</Link>
           </li>
-          <li className="px-2">
+          <li className="px-2" data-testid="cart">
             <Link to="/cart">
               <i className="fa-solid fa-cart-arrow-down"></i> Cart-
               {cartItems.length}
             </Link>
           </li>
-          <li className="px-2"> {isOnline ? "🟢" : "🔴"} </li>
+          <li data-testid="online-status" className="px-2">
+            {isOnline ? "🟢" : "🔴"}
+          </li>
         </ul>
       </div>
       {isLoggedIn ? (

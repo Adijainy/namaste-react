@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 //function to filter data
 function filterData(searchText, restaurants) {
   const filteredData = restaurants.filter((restaurant) =>
-    restaurant?.data?.name.toLowerCase()?.includes(searchText.toLowerCase())
+    restaurant?.info?.name.toLowerCase()?.includes(searchText.toLowerCase())
   );
   return filteredData;
 }
@@ -27,8 +27,16 @@ const Body = () => {
     );
     const json = await data.json();
     //optional chaining
-    setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-    setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+    console.log(
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants[0]
+    );
+    setAllRestaurants(
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    setFilteredRestaurants(
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
   }
 
   //not render component (Early return)
@@ -65,10 +73,10 @@ const Body = () => {
         {filteredRestaurants.map((restaurant) => {
           return (
             <Link
-              to={"/restaurant/" + restaurant.data.id}
-              key={restaurant.data.id}
+              to={"/restaurant/" + restaurant.info.id}
+              key={restaurant.info.id}
             >
-              <RestaurauntCard {...restaurant.data} />
+              <RestaurauntCard {...restaurant.info} />
             </Link>
           );
         })}

@@ -18,6 +18,7 @@ const Body = () => {
 
   useEffect(() => {
     //Api call
+    alert("Please ensure that CORS extension in enabled to view this page!");
     getRestaurant();
   }, []);
 
@@ -27,10 +28,6 @@ const Body = () => {
     );
     const json = await data.json();
     //optional chaining
-    console.log(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants[0]
-    );
     setAllRestaurants(
       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );

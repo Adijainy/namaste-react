@@ -4,13 +4,16 @@ const cartSlice = createSlice({
   name: "cart",
   initialState: {
     items: [],
+    totalPrice: 0,
   },
   reducers: {
     addItem: (state, action) => {
       state.items.push(action.payload);
+      state.totalPrice = state.totalPrice + action.payload.price / 100;
     },
     removeItem: (state, action) => {
-      state.items.pop();
+      state.items = state.items.filter((item) => item.id !== action.payload.id);
+      state.totalPrice = state.totalPrice - action.payload.price / 100;
     },
     clearCart: (state) => {
       state.items = [];

@@ -18,13 +18,12 @@ const Body = () => {
 
   useEffect(() => {
     //Api call
-    alert("Please ensure that CORS extension in enabled to view this page!");
     getRestaurant();
   }, []);
 
   async function getRestaurant() {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=23.2599333&lng=77.412615&page_type=DESKTOP_WEB_LISTING"
+      "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=23.2599333&lng=77.412615&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
     //optional chaining

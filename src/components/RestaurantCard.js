@@ -7,7 +7,7 @@ const RestaurauntCard = ({
   sla,
   costForTwo,
 }) => (
-  <div className="w-64 h-80 p-5 m-2 border-solid border-[0.05rem] border-white hover:border-zinc-600 ">
+  <div className="w-64 h-80 p-2 m-4 transition ease-in-out shadow hover:scale-105 duration-300 hover:shadow-lg ">
     <img src={IMG_CON_URL + cloudinaryImageId} alt="" />
     <h2 className="text-base font-semibold mt-1">{name}</h2>
     <h3 className="text-xs mt-2 mb-3">{cuisines.join(", ")}</h3>

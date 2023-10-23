@@ -21,7 +21,7 @@ const RestaurantMenu = () => {
   return !restaurant ? (
     <ShimmerUi />
   ) : (
-    <div className=" w-2/4 px-7 py-5 mx-auto my-8">
+    <div className=" md:w-2/4 px-7 py-5 mx-auto my-8 w-full">
       <div className="flex justify-between pb-4 border-b-2 border-gray-400 border-opacity-30">
         <div>
           <h1 className="text-lg font-bold text-gray-900 mb-1">
@@ -85,7 +85,7 @@ const RestaurantMenu = () => {
                           item?.card?.info?.variantsV2?.variantGroups[0]
                             ?.variations[0]?.name}
                     </h4>
-                    <p className="text-xs text-gray-400 ">
+                    <p className="text-xs text-gray-400 lg:line-clamp-none line-clamp-1 ">
                       {item?.card?.info?.description}
                     </p>
                   </div>

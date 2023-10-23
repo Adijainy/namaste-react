@@ -2,6 +2,7 @@ import RestaurauntCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import ShimmerUi from "./ShimmerUI";
 import { Link } from "react-router-dom";
+import { swiggy_api_URL, swiggy_mobile_api_URL } from "../constant";
 
 //function to filter data
 function filterData(searchText, restaurants) {
@@ -21,18 +22,35 @@ const Body = () => {
     getRestaurant();
   }, []);
 
+  //Function to check if mobile or not
+  function isMobile() {
+    return window.innerWidth <= 768;
+  }
+
   async function getRestaurant() {
-    const data = await fetch(
-      "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=23.2599333&lng=77.412615&page_type=DESKTOP_WEB_LISTING"
-    );
-    const json = await data.json();
-    //optional chaining
-    setAllRestaurants(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-    setFilteredRestaurants(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
+    // handle the error using try... catch for mobile
+    try {
+      const data = await fetch(
+        isMobile() ? swiggy_mobile_api_URL : swiggy_api_URL
+      );
+      const json = await data.json();
+
+      // updated state variable restaurants with Swiggy API data
+      let topRestaurant;
+      if (isMobile()) {
+        topRestaurant =
+          json?.data?.success?.cards[1]?.gridWidget?.gridElements?.infoWithStyle
+            ?.restaurants;
+      } else {
+        topRestaurant =
+          json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+            ?.restaurants;
+      }
+      setAllRestaurants(topRestaurant);
+      setFilteredRestaurants(topRestaurant);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   //not render component (Early return)
@@ -65,7 +83,7 @@ const Body = () => {
         </button>
       </div>
 
-      <div className="flex flex-wrap px-30 ml-20 ">
+      <div className="flex flex-wrap justify-center ">
         {filteredRestaurants.map((restaurant) => {
           return (
             <Link

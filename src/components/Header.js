@@ -23,47 +23,49 @@ export const Title = () => {
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const isOnline = useOnline();
+  const [isNavbarOpen, setIsNavbarOpen] = useState(false);
 
   const cartItems = useSelector((store) => store.cart.items);
-  // console.log(cartItems);
+  console.log(isNavbarOpen);
 
   return (
-    <div className="flex justify-between bg-[#212121] text-white shadow-lg px-24">
+    <div className="relative flex justify-between items-center bg-[#212121] text-white shadow-lg px-6">
       <Title />
-      <div className="nav-items">
-        <ul className="flex py-6">
-          <li className="px-2">
-            <Link to="/">Home</Link>
-          </li>
-          <li className="px-2">
-            <Link to="/about">About</Link>
-          </li>
-          <li className="px-2">
-            <Link to="/contact">Contact</Link>
-          </li>
-          <li className="px-2">
-            <Link to="/instamart">Instamart</Link>
-          </li>
-          <li className="px-2" data-testid="cart">
-            <Link to="/cart">
-              <i className="fa-solid fa-cart-arrow-down"></i> Cart-
-              {cartItems.length}
-            </Link>
-          </li>
-          <li data-testid="online-status" className="px-2">
-            {isOnline ? "🟢" : "🔴"}
-          </li>
-        </ul>
+      <div class="lg:hidden z-50">
+        <button
+          class="navbar-burger flex items-center p-3"
+          onClick={() => setIsNavbarOpen(!isNavbarOpen)}
+        >
+          <i className="fa-solid fa-bars text-xl"></i>
+        </button>
       </div>
-      {isLoggedIn ? (
-        <button className="login-btn" onClick={() => setIsLoggedIn(false)}>
-          Logout
-        </button>
-      ) : (
-        <button className="login-btn" onClick={() => setIsLoggedIn(true)}>
-          Login
-        </button>
-      )}
+
+      <ul
+        className={`"lg:mx-auto lg:flex-row flex items-center lg:space-x-6 lg:static lg:min-w-fit lg:min-h-full min-w-full min-h-screen  ${
+          isNavbarOpen
+            ? "absolute top-0 left-0 flex-col justify-center bg-[#212121] space-y-5 text-xl transition-all ease-linear duration-300"
+            : "absolute top-0 left-0 transform -translate-y-[100%] lg:translate-y-0 transition-all"
+        }"`}
+      >
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
+        <li>
+          <Link to="/contact">Contact</Link>
+        </li>
+        <li>
+          <Link to="/instamart">Instamart</Link>
+        </li>
+        <li>
+          <Link to="/cart" className="" data-testid="cart">
+            <i className="fa-solid fa-cart-arrow-down"></i> Cart-
+            {cartItems.length}
+          </Link>
+        </li>
+      </ul>
     </div>
   );
 };

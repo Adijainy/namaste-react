@@ -1,7 +1,7 @@
 const ShimmerUi = () => {
   return (
     <>
-      <div className="flex flex-wrap px-30 ml-20">
+      <div className="flex flex-wrap justify-center">
         {Array(10)
           .fill("")
           .map((e, index) => (

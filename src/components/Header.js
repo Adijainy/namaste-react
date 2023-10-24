@@ -9,13 +9,14 @@ const loggedInUser = () => {
 };
 export const Title = () => {
   return (
-    <a href="/">
+    <a href="/" className="flex items-center">
       <img
         data-testid="logo"
         className="w-20 px-2"
         src="https://s3.amazonaws.com/thumbnails.venngage.com/template/9f596769-790d-4b5f-bb80-668016a9c920.png"
         alt="logo"
       />
+      <h1 className="text-lg font-semibold text-white">Take'N'Eat</h1>
     </a>
   );
 };

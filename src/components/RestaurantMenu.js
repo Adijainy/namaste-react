@@ -63,8 +63,11 @@ const RestaurantMenu = () => {
       <div className="pt-6">
         <h1 className="text-lg text-gray-700 font-bold">Menu</h1>
         <ul>
-          {restaurant?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards
-            ?.map((x) => x.card?.card)
+          {restaurant?.cards
+            .find((x) => x.groupedCard)
+            ?.groupedCard?.cardGroupMap?.REGULAR?.cards?.map(
+              (x) => x.card?.card
+            )
             ?.filter((x) => x["@type"] == MENU_ITEM_TYPE)
             ?.map((x) => x.itemCards)
             .flat()
